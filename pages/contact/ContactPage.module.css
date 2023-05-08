@@ -1,0 +1,25 @@
+.ContactPageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.smallText {
+  font-size: 14px;
+  color: #787878;
+  padding: 20px 0;
+}
+
+.email {
+  display: block;
+  font-size: 16px;
+  color: #787878;
+  text-decoration: none;
+}
+
+@media all and (min-width: 960px) {
+  .email {
+    font-size: 18px;
+  }
+}

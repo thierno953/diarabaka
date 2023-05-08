@@ -29,7 +29,7 @@ const BlogPage = ({ posts }) => {
 
   const allTagsArr = [...allTagsSet].sort((a, b) => a.localeCompare(b));
   allTagsArr.unshift("all");
- // console.log(allTagsArr);
+  // console.log(allTagsArr);
 
   useEffect(() => {
     let tempPosts = [...posts];
@@ -73,8 +73,10 @@ const BlogPage = ({ posts }) => {
             setSelectedTag={setSelectedTag}
             tags={allTagsArr}
           />
-          <BlogList posts={filteredPosts} />
-          <Pagination currentPage={currentPage} totalPages={totalPages} />
+          <div>
+            <BlogList posts={filteredPosts} />
+            <Pagination currentPage={currentPage} totalPages={totalPages} />
+          </div>
         </div>
       </main>
     </>
