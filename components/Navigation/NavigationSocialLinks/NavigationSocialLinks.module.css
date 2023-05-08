@@ -1,0 +1,23 @@
+.navSocialLinks {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navSocialLinks li a {
+  padding-left: 20px;
+}
+
+@media all and (min-width: 696px) {
+  .navSocialLinks {
+    margin-top: 0;
+    justify-content: flex-start;
+  }
+}
+
+.socialIcon {
+  height: 16px;
+  width: auto;
+  object-fit: contain;
+}

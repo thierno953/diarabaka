@@ -1,0 +1,48 @@
+.navLinks {
+    color: #787878;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navLinks li {
+    width: 100%;
+}
+
+.navLinks li a {
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    color: #787878;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navLinks li a:hover {
+    color: #000000;
+}
+
+@media all and (min-width: 696px) {
+  .navLinks {
+    flex-direction: row;
+  }
+
+  .navLinks li {
+    width: initial;
+  }
+
+  .navLinks li a {
+    width: auto;
+    padding: 20px;
+  }
+}
+
+.navLinksFooter li a {
+  text-align: left;
+}
+
+.navLinkActive {
+  color: #000000 !important;
+}

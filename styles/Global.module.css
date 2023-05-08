@@ -1,0 +1,42 @@
+.container {
+  width: "100%";
+  max-width: 1040px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.h1 {
+  font-size: 24;
+  font-weight: normal;
+  color: #787878;
+}
+.h1 span {
+  color: #000000;
+}
+
+.h2 {
+  font-size: 36px;
+  font-weight: normal;
+}
+
+.h3 {
+  font-size: 32px;
+  font-weight: normal;
+  color: #000000;
+}
+
+.h4 {
+  font-size: 12px;
+  font-weight: normal;
+  color: #787878;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.h5 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #000000;
+}

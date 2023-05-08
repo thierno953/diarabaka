@@ -1,0 +1,68 @@
+.aboutContainer {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@media all and (min-width: 960px) {
+  .aboutContainer {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
+.aboutMeContainer {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@media all and (min-width: 960px) {
+  .aboutMeContainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.aboutMeTextWrapper p {
+  font-size: 16px;
+}
+
+@media all and (min-width: 960px) {
+  .aboutMeTextWrapper {
+    padding-right: 120px;
+  }
+}
+
+.aboutMeImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 40px;
+  border-radius: 4px;
+  margin: initial;
+}
+
+@media all and (min-width: 960px) {
+  .aboutMeImage {
+    width: 265px;
+    max-width: 100%;
+    height: 320px;
+    border-radius: 4px;
+    margin: initial;
+  }
+}
+
+.checkOutCV {
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #ffffff;
+  background: #787878;
+  padding: 15px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all ease 500ms;
+}
+
+.checkOutCV:hover {
+  background: #000000;
+}

@@ -1,0 +1,25 @@
+.tagsfilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 40px;
+}
+.tagButton {
+  border: none;
+  outline: none;
+  background: #787878;
+  color: #ffffff;
+  padding: 7px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.selected {
+  background: #000000;
+  font-weight: 800;
+}
+
+@media all and (min-width: 960px) {
+  .tagsfilter {
+    margin-top: 100px;
+  }
+}

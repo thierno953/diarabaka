@@ -1,0 +1,19 @@
+/* .pagination {} */
+
+  .pagination_heading {
+    font-size: 14px;
+  }
+  .paginateLinks_container {
+    display: flex;
+    gap: 16px;
+  }
+  .paginateLinks {
+    display: flex;
+    font-size: 16px;
+    padding: 3px 8px;
+    background: #787878;
+    color: #FFFFFF;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+  }

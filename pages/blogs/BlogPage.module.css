@@ -1,0 +1,11 @@
+.blogflex {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@media all and (min-width: 696px) {
+  .blogflex {
+    display: flex;
+    flex-direction: column;
+  }
+}

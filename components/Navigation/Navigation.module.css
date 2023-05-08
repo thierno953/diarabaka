@@ -1,0 +1,98 @@
+.navContainer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hideMobile {
+  display: none;
+}
+
+@media all and (min-width: 696px) {
+  .hideMobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.navHamburger {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.navHamburger span {
+    display: block;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 25px;
+    height: 2px;
+    background: #000000;
+    --webkit-transition: all 0.3s ease-in-out;
+    --o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin: 8px auto;
+}
+
+@media all and (min-width: 696px) {
+    .navHamburger span {
+        display: none;
+    }
+}
+
+.navHamburgerActive span:nth-child(2) {
+    opacity: 0;
+}
+
+.navHamburgerActive span:nth-child(1) {
+    --webkit-transform: translateY(10px) rotate(45deg);
+    --o-transform: translateY(10px) rotate(45deg);
+    --ms-transform: translateY(10px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg);
+}
+
+.navHamburgerActive span:nth-child(3) {
+    --webkit-transform: translateY(-10px) rotate(-45deg);
+    --o-transform: translateY(-10px) rotate(-45deg);
+    --ms-transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.navMobileContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    z-index: 9998;
+    padding: 60px 20px 60px 20px;
+}
+
+.navMobileContainerActive {
+    display: block;
+}
+
+@media all and (min-width: 696px) {
+    .navMobileContainerActive {
+        display: none;
+    }
+}

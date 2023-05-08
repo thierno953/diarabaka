@@ -1,0 +1,21 @@
+.detail {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blogImage {
+  display: inline-block;
+  max-width: 100%;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  position: relative;
+}
+
+@media all and (min-width: 696px) {
+  .blogImage {
+    max-width: 100%;
+    width: 100%;
+    height: 400px;
+  }
+}

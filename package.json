@@ -9,10 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^1.2.1",
+    "date-fns": "^2.30.0",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.8.0",
     "next": "13.4.1",
+    "next-mdx-remote": "^4.4.1",
+    "next-remote-watch": "^2.0.0",
+    "next-themes": "^0.2.1",
+    "phosphor-react": "^1.4.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "react-jss": "^10.10.0",
+    "react-router-dom": "^6.11.1",
+    "rehype-highlight": "^6.0.0"
   }
 }

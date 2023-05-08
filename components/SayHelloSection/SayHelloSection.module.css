@@ -1,0 +1,39 @@
+.sayHelloContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 80px 0 40px;
+}
+
+@media all and (min-width: 960px) {
+  .sayHelloContainer {
+    flex-direction: row;
+    align-items: center;
+    margin: 120px 0;
+  }
+}
+
+.sayHelloTitle h4 {
+  font-size: 24px;
+}
+
+.smallText {
+  font-size: 14;
+}
+
+.getInTouchButton {
+  font-size: 14px;
+  color: #ffffff;
+  background: #787878;
+  padding: 14px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all ease 500ms;
+}
+
+.getInTouchButton:hover {
+  background: #000000;
+}
