@@ -7,6 +7,7 @@ function TagFilter({ tags, selectedTag, setSelectedTag, className }) {
   const router = useRouter();
   return (
     <div className={classes.tagsfilter}>
+      <h3>Tags:</h3>
       {tags.map((tag) => (
         <button
           key={tag}

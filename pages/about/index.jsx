@@ -16,7 +16,7 @@ const AboutPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={globalClasses.container}>
+      <>
         <div className={classes.aboutContainer}>
           <div className={classes.aboutMeContainer}>
             <div className={classes.aboutMeTextWrapper}>
@@ -46,18 +46,14 @@ const AboutPage = () => {
               </p>
               
             </div>
-            <Image
-              src={Myprofile}
-              alt="Thierno"
-              className={classes.aboutMeImage}
-            />
+            <Image src={Myprofile} alt="Thierno" className={classes.aboutMeImage} />
           </div>
           <Link href="/contact" className={classes.checkOutCV}>
             Check out my CV
           </Link>
         </div>
         <SayHelloSection />
-      </main>
+      </>
     </>
   );
 };

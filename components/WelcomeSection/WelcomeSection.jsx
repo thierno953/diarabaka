@@ -13,9 +13,9 @@ const WelcomeSection = () => {
         <br />
         <span>I’m Thierno - A website developer based in Belgium.</span>
         <br />
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam
-        laborum quae voluptas quasi.
+        A full stack website developer specialising in javascript applications.
         <br />
+        <span>I am currently learning DevOps and System Admin.</span>
       </h1>
       <Image
         src={ThiernoImage}

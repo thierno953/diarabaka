@@ -10,6 +10,7 @@ import { postFileNames, postsPath } from "@/utils/mdxUtils";
 import TagFilter from "@/components/blogs/TagFilter/TagFilter";
 import { useRouter } from "next/router";
 import Pagination from "@/components/Pagination/Pagination";
+import PageHeading from "@/components/PageHeading/PageHeading";
 
 const BlogPage = ({ posts }) => {
   // pagination
@@ -67,6 +68,16 @@ const BlogPage = ({ posts }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={globalClasses.container}>
+        <PageHeading
+          title="Blog posts"
+          description={
+            <>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              <br />
+              Quidem iste eligendi tempore, quia nam possimus, aperiam
+            </>
+          }
+        />
         <div className={classes.blogflex}>
           <TagFilter
             selectedTag={selectedTag}

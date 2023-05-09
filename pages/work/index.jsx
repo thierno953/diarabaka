@@ -5,6 +5,7 @@ import ImageOne from "../../assets/blog/demo.png";
 import ImageTwo from "../../assets/blog/demo.png";
 import ImageThree from "../../assets/blog/demo.png";
 import WorkPost from "@/components/WorkPost/WorkPost";
+import PageHeading from "@/components/PageHeading/PageHeading";
 
 const tempWorkPosts = [
   {
@@ -36,6 +37,16 @@ const tempWorkPosts = [
 const WorkPage = () => {
   return (
     <div className={classes.workWrapper}>
+      <PageHeading
+        title="Portfolio"
+        description={
+          <>
+            I work as a full stack web developer, mostly using React and NodeJS.
+            <br />
+            Check out some of the projects I worked on.
+          </>
+        }
+      />
       {tempWorkPosts.map((post, i) => (
         <WorkPost key={i} post={post} reversed={i % 2 !== 0} />
       ))}
