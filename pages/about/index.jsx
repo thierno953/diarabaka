@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SayHelloSection from "@/components/SayHelloSection/SayHelloSection";
 import Head from "next/head";
- 
+
 const AboutPage = () => {
   return (
     <>
@@ -25,28 +25,40 @@ const AboutPage = () => {
                 developer based in Belgium.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                voluptates facere fuga labore repudiandae, cum necessitatibus
-                quasi in temporibus dolore eius quaerat dignissimos tenetur
-                beatae magni neque. Iste, molestiae earum!
+                I am passionate about creating digital content for the web. My
+                interest in web development was sparked in 2020 when I created
+                my first project called Diarabaka. a blog app built using React
+                Noide.js.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                voluptates facere fuga labore repudiandae, cum necessitatibus
-                quasi in temporibus dolore eius quaerat dignissimos tenetur
-                beatae magni neque. Iste, molestiae earum!
+                Fast-forward to today. I specialize in designing and developing
+                high-quality solutions that delight our clients and exceed their
+                expectations at Becode.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                voluptates facere fuga labore repudiandae, cum necessitatibus
-                quasi in temporibus dolore eius quaerat dignissimos tenetur
-                beatae magni neque. Iste, molestiae earum!
+                Additionally. I share my knowledge and passion with the world
+                through my Blog, where I demonstrate how to build fullstack
+                applications.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                voluptates facere fuga labore repudiandae, cum necessitatibus
-                quasi in temporibus dolore eius quaerat dignissimos tenetur
-                beatae magni neque. Iste, molestiae earum!
+                I am also working on a new project called Diarabaka, aimed at
+                enchancing frontend development skills.
+              </p>
+              <p>
+                Here are a few technologies I've been working with recently:{" "}
+                <br />
+                <br />
+                <span className={classes.skills}>
+                  React - Nextjs - Vitejs- Tailwindcss - Typescript - Redux toolkit - Nodejs
+                  - Expressjs
+                </span>
+                <br />
+                <br />
+                <span className={classes.skills}>
+                  Shell Script - Github Actions - Gitlab - docker - Kubernetes -
+                  Jenkins - Vagrant - Ansible - Terraform - SonarQube -
+                  Prometheus - Grafana - AWS
+                </span>
               </p>
             </div>
             <Image

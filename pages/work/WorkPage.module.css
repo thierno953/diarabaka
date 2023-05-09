@@ -1,0 +1,21 @@
+.workWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 80px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@media all and (min-width: 960px) {
+    .workWrapper {
+      margin-top: 100px;
+      margin-bottom: 100px;
+    }
+  }
+  
+
+@media (min-width: 696px) {
+  .workWrapper {
+    grid-gap: 160px;
+  }
+}

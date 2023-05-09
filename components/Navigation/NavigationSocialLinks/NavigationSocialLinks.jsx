@@ -8,12 +8,12 @@ const NavigationSocialLinks = () => {
     <ul className={classes.navSocialLinks}>
       <ul className={classes.navSocialLinks}>
         <li>
-          <Link href="#">
+          <Link href="https://www.linkedin.com/in/thierno-barry-0b8527203">
             <FiLinkedin className={classes.socialIcon} />
           </Link>
         </li>
         <li>
-          <Link href="#">
+          <Link href="https://github.com/thierno953">
             <FiGithub className={classes.socialIcon} />
           </Link>
         </li>

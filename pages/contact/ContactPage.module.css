@@ -1,8 +1,14 @@
 .ContactPageContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  display: grid;
+  padding-top: 40px;
+  grid-template-columns: 1fr;
+}
+
+@media all and (min-width: 960px) {
+  .ContactPageContainer {
+    padding-top: 100px;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .smallText {
@@ -16,10 +22,12 @@
   font-size: 16px;
   color: #787878;
   text-decoration: none;
+  padding-bottom: 20px;
 }
 
 @media all and (min-width: 960px) {
   .email {
     font-size: 18px;
+    padding-bottom: 0;
   }
 }

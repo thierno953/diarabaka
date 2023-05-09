@@ -1,0 +1,79 @@
+.workPost {
+  display: flex;
+  flex-direction: column;
+}
+
+@media all and (min-width: 960px) {
+  .workPost {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.workPostReversed {
+  flex-direction: column;
+}
+
+@media all and (min-width: 960px) {
+  .workPostReversed {
+    flex-direction: row-reverse;
+  }
+}
+
+.postImage {
+  width: 100%;
+  max-width: 100%;
+  height: 286px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+@media all and (min-width: 960px) {
+  .postImage {
+    width: 50%;
+    max-width: 100vw;
+    height: 286px;
+  }
+}
+
+.postInfo {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media all and (min-width: 960px) {
+  .postInfo {
+    margin-left: 40px;
+  }
+}
+
+.postInfoReversed {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 960px) {
+  .postInfoReversed {
+    margin-right: 40px;
+  }
+}
+
+.postDescription {
+    font-size: 14px;
+    color: #787878;
+}
+
+.visitWebsiteButton {
+    font-size: 14px;
+    display: block;
+    color: #787878;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 20px;
+    letter-spacing: 1.5px;
+}

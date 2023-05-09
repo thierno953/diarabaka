@@ -66,3 +66,11 @@
 .checkOutCV:hover {
   background: #000000;
 }
+
+.skills {
+  background: #787878;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 2px 2px;
+  border-radius: 2px;
+}
