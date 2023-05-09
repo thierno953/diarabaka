@@ -44,22 +44,7 @@ const AboutPage = () => {
                 I am also working on a new project called Diarabaka, aimed at
                 enchancing frontend development skills.
               </p>
-              <p>
-                Here are a few technologies i have been working with recently:
-                <br />
-                <br />
-                <span className={classes.skills}>
-                  React - Nextjs - Vitejs- Tailwindcss - Typescript - Redux toolkit - Nodejs
-                  - Expressjs
-                </span>
-                <br />
-                <br />
-                <span className={classes.skills}>
-                  Shell Script - Github Actions - Gitlab - docker - Kubernetes -
-                  Jenkins - Vagrant - Ansible - Terraform - SonarQube -
-                  Prometheus - Grafana - AWS
-                </span>
-              </p>
+              
             </div>
             <Image
               src={Myprofile}
