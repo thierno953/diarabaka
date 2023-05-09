@@ -25,28 +25,37 @@ const AboutPage = () => {
                 developer based in Belgium.
               </p>
               <p>
-                I am passionate about creating digital content for the web. My
-                interest in web development was sparked in 2020 when I created
-                my first project called Diarabaka. a blog app built using React
-                Noide.js.
+                As a MERN stack web developer, I specialize in building dynamic,
+                modern web applications using MongoDB, Express, React,Next Js
+                and ,Node.js.
               </p>
               <p>
-                Fast-forward to today. I specialize in designing and developing
-                high-quality solutions that delight our clients and exceed their
-                expectations at Becode.
+                I am currently learning DevOps and System Admin (Shell Script,
+                Github Actions, Gitlab, docker, Kubernetes, Jenkins, Vagrant,
+                Ansible, Terraform, SonarQube, Prometheus, Grafana, AWS, Azure)
               </p>
               <p>
-                Additionally. I share my knowledge and passion with the world
-                through my Blog, where I demonstrate how to build fullstack
-                applications.
+                With a strong foundation in JavaScript, I am skilled at
+                developing both the front-end and back-end of web applications,
+                making me a valuable asset in the development process from start
+                to finish.
               </p>
               <p>
-                I am also working on a new project called Diarabaka, aimed at
-                enchancing frontend development skills.
+                My experience with the MERN stack allows me to create fast,
+                responsive, and scalable applications that deliver a seamless
+                user experience.
               </p>
-              
+              <p>
+                In my spare time, I love to explore new technology and stay up
+                to date on the latest industry trends. I am always looking for
+                new challenges and opportunities to grow as a developer.
+              </p>
             </div>
-            <Image src={Myprofile} alt="Thierno" className={classes.aboutMeImage} />
+            <Image
+              src={Myprofile}
+              alt="Thierno"
+              className={classes.aboutMeImage}
+            />
           </div>
           <Link href="/contact" className={classes.checkOutCV}>
             Check out my CV
