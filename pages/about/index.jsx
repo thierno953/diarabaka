@@ -4,8 +4,8 @@ import globalClasses from "../../styles/Global.module.css";
 import Myprofile from "../../assets/about/team-3.jpg";
 import Image from "next/image";
 import Link from "next/link";
-import SayHelloSection from "@/components/SayHelloSection/SayHelloSection";
 import Head from "next/head";
+import SayHelloSection from "@/components/SayHelloSection/SayHelloSection";
 
 const AboutPage = () => {
   return (
@@ -45,7 +45,7 @@ const AboutPage = () => {
                 enchancing frontend development skills.
               </p>
               <p>
-                Here are a few technologies I've been working with recently:{" "}
+                Here are a few technologies i have been working with recently:
                 <br />
                 <br />
                 <span className={classes.skills}>
