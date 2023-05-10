@@ -1,0 +1,134 @@
+---
+title: Prometheus
+author: Thierno Barry
+date: 2023-05-10
+tags: [Prometheus]
+description: Prometheus is a open source Linux Server Monitoring tool mainly used for metrics monitoring, event monitoring, alert management, etc...
+bannerUrl: https://leanpub.com/site_images1/rpcmonitor/prometheus-logo.jpg
+---
+
+Prometheus is a open source Linux Server Monitoring tool mainly used for metrics monitoring, event monitoring, alert management, etc...
+
+Prometheus has changed the way of monitoring systems and that is why it has become the Top-level project of Cloud Native Computing Foundation **CNCF**.
+
+Prometheus uses a powerful query language i.e .**PromQL**.
+
+In Prometheus tabs are on and handles hundreds of services and microservices.
+
+Prometheus use multiple modes used for graphing and dashboarding support.
+
+# Install Prometheus:
+
+**Create a system user for Prometheus using below commands :**
+
+```jsx
+sudo useradd --no-create-home --shell /bin/false prometheus
+```
+
+**Create the directories in which we will be storing our configuration files and libraries :**
+
+```jsx
+sudo mkdir /etc/prometheus
+
+sudo mkdir /var/lib/prometheus
+```
+
+**Set the ownership of the /var/lib/prometheus directory with below command :**
+
+```jsx
+sudo chown prometheus:prometheus /var/lib/prometheus
+```
+
+**We need to inside /tmp :**
+
+```jsx
+cd /tmp/
+```
+
+**Prometheus downloads :**
+
+```jsx
+wget https://github.com/prometheus/prometheus/releases/download/v2.42.0-rc.0/prometheus-2.42.0-rc.0.linux-amd64.tar.gz
+```
+
+**Extract the files using tar :**
+
+```jsx
+tar -xvf prometheus-2.42.0.linux-amd64.tar.gz
+```
+
+**Move the configuration file and set the owner to the prometheus user :**
+
+```jsx
+cd prometheus-2.42.0.linux-amd64
+
+sudo mv console* /etc/prometheus
+
+sudo mv prometheus.yml /etc/prometheus
+
+sudo chown -R prometheus:prometheus /etc/prometheus
+```
+
+**Move the binaries and set the owner :**
+
+```jsx
+sudo mv prometheus /usr/local/bin/
+
+sudo chown prometheus:prometheus /usr/local/bin/prometheus
+```
+
+**Create the service file using below command :**
+
+```jsx
+sudo nano /etc/systemd/system/prometheus.service
+```
+
+**Add**
+
+```jsx
+[Unit]
+Description=Prometheus
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=prometheus
+Group=prometheus
+Type=simple
+ExecStart=/usr/local/bin/prometheus \
+    --config.file /etc/prometheus/prometheus.yml \
+    --storage.tsdb.path /var/lib/prometheus/ \
+    --web.console.templates=/etc/prometheus/consoles \
+    --web.console.libraries=/etc/prometheus/console_libraries
+
+[Install]
+WantedBy=multi-user.target
+```
+
+**Reload systemd**
+
+```jsx
+sudo systemctl daemon-reload
+```
+
+**Start Prometheus service**
+
+```jsx
+sudo systemctl start prometheus
+
+sudo systemctl enable prometheus
+
+sudo systemctl status prometheus
+```
+
+**config file**
+
+```jsx
+sudo nano /etc/prometheus/prometheus.yml
+```
+
+**service file**
+
+```jsx
+sudo nano /etc/systemd/system/prometheus.service
+```
