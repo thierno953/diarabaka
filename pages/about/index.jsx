@@ -16,7 +16,7 @@ const AboutPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/tmb.jpg" />
       </Head>
-      <>
+      <main className={globalClasses.container}>
         <div className={classes.aboutContainer}>
           <div className={classes.aboutMeContainer}>
             <div className={classes.aboutMeTextWrapper}>
@@ -62,7 +62,7 @@ const AboutPage = () => {
           </Link>
         </div>
         <SayHelloSection />
-      </>
+      </main>
     </>
   );
 };

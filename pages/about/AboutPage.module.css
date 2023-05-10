@@ -32,24 +32,16 @@
 }
 
 .aboutMeImage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  width: 300px;
+  width: 200px;
   height: 200px;
   object-fit: cover;
+  border-radius: 50%;
   margin: 0 auto 40px;
-  border-radius: 4px;
-  margin: initial;
 }
 
 @media all and (min-width: 960px) {
   .aboutMeImage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 265px;
+    width: 256px;
     max-width: 100%;
     height: 320px;
     border-radius: 4px;
