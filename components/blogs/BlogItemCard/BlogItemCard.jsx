@@ -28,7 +28,7 @@ const BlogItemCard = ({ post }) => {
       <p className={classes.blogPostDescription}>
         {post.frontmatter.description}
       </p>
-      <Link href={`/blogs/${post.slug}`} className={classes.blogPostTitle}>
+      <Link href={`/blog/${post.slug}`} className={classes.blogPostTitle}>
         <h5 className={globalClasses.h5}>ReadMore</h5>
         <FiArrowRight />
       </Link>
