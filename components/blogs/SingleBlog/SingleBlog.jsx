@@ -9,7 +9,7 @@ import BlogContent from "../BlogContent/BlogContent";
 const SingleBlog = ({ mdxSource, frontmatter }) => {
   return (
     <div>
-      <Link href="/blogs" className={classes.blogPostTitle}>
+      <Link href="/blog" className={classes.blogPostTitle}>
         <FiArrowLeft />
         <h5 className={globalClasses.h5}>Home</h5>
       </Link>
