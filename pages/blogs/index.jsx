@@ -72,9 +72,11 @@ const BlogPage = ({ posts }) => {
           title="Blog posts"
           description={
             <>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Hi! I am Thierno !! I started writing articles about my DevOps and
+              cloud learning.
               <br />
-              Quidem iste eligendi tempore, quia nam possimus, aperiam
+              My goal is to share the concepts I learn, the projects I build,
+              and the tasks I perform regarding DevOps. Welcome to my blog!!
             </>
           }
         />
