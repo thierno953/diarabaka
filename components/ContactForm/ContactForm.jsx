@@ -18,7 +18,7 @@ const ContactForm = () => {
         <Form>
           <div className={classes.formInput}>
             <label htmlFor="name">Name</label>
-            <Field type="string" name="name" placeholder="Thierno Barry" />
+            <Field type="string" name="name" placeholder="Enter your name..." />
             <ErrorMessage name="name" component="div" />
           </div>
           <div className={classes.formInput}>
@@ -26,16 +26,16 @@ const ContactForm = () => {
             <Field
               type="string"
               name="email"
-              placeholder="thiernobarry554@gmail.com"
+              placeholder="Enter your email..."
             />
             <ErrorMessage name="email" component="div" />
           </div>
           <div className={classes.formInput}>
-            <label htmlFor="topic">Topic</label>
+            <label htmlFor="topic">Subject</label>
             <Field
               type="string"
-              name="topic"
-              placeholder="FullStack | DevSecOps"
+              name="Subject"
+              placeholder="Subject"
             />
             <ErrorMessage name="topic" component="div" />
           </div>

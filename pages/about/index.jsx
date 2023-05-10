@@ -26,13 +26,20 @@ const AboutPage = () => {
               </p>
               <p>
                 As a MERN stack web developer, I specialize in building dynamic,
-                modern web applications using MongoDB, Express, React,Next Js
-                and ,Node.js.
+                modern web applications using{" "}
+                <span className={classes.aboutSpan}>
+                  React, NextJS, NodeJS, ExpressJS, MongoDB
+                </span>
+                .
               </p>
               <p>
-                I am currently learning DevOps and System Admin (Shell Script,
-                Github Actions, Gitlab, docker, Kubernetes, Jenkins, Vagrant,
-                Ansible, Terraform, SonarQube, Prometheus, Grafana, AWS, Azure)
+                I am currently learning DevOps and System Admin{" "}
+                <span className={classes.aboutSpan}>
+                  Shell Script, Github Actions, Gitlab, docker, Kubernetes,
+                  Jenkins, Vagrant, Ansible, Terraform, SonarQube, Prometheus,
+                  Grafana, AWS, Azure
+                </span>
+                .
               </p>
               <p>
                 With a strong foundation in JavaScript, I am skilled at

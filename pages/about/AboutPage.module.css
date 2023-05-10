@@ -3,6 +3,10 @@
   margin-bottom: 40px;
 }
 
+.aboutSpan {
+  font-weight: 600;
+}
+
 @media all and (min-width: 960px) {
   .aboutContainer {
     margin-top: 100px;
