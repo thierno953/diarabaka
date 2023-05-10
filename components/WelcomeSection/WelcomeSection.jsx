@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./WelcomeSection.module.css";
-import ThiernoImage from "../../assets/about/team-3.jpg";
+import ThiernoImage from "../../assets/about/tmb.jpg";
 import clsx from "clsx";
 import globalClasses from "../../styles/Global.module.css";
 import Image from "next/image";
