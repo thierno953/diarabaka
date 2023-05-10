@@ -12,12 +12,12 @@ function Pagination({ totalPages, currentPage }) {
       </p>
       <div className={classes.paginateLinks_container}>
         {currentPage > 1 && (
-          <Link href={`/blogs/?page=${currentPage - 1}`} className={classes.paginateLinks}>
+          <Link href={`/blog/?page=${currentPage - 1}`} className={classes.paginateLinks}>
             Prev
           </Link>
         )}
         {currentPage < totalPages && (
-          <Link href={`/blogs/?page=${currentPage + 1}`} className={classes.paginateLinks}>
+          <Link href={`/blog/?page=${currentPage + 1}`} className={classes.paginateLinks}>
             Next
           </Link>
         )}

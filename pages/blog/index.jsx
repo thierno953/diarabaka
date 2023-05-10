@@ -14,7 +14,7 @@ import PageHeading from "@/components/PageHeading/PageHeading";
 
 const BlogPage = ({ posts }) => {
   // pagination
-  const postPerPage = 10;
+  const postPerPage = 4;
   const [currentPage, setCurrentPage] = useState(null);
   const router = useRouter();
 
@@ -55,7 +55,7 @@ const BlogPage = ({ posts }) => {
 
   // pagination
   const totalPages =
-    selectedTag === "all"
+    selectedTag <= "all"
       ? Math.ceil(posts.length / postPerPage)
       : Math.ceil(filteredPosts.length / postPerPage);
 
