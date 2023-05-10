@@ -1,0 +1,50 @@
+---
+title: Shell Scripting
+author: Thierno Barry
+date: 2023-05-10
+tags: [shell-scripting]
+description: A shell scripting is a list of commands in a computer program that is run by the Unix shell which is a command line interpreter.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+## What is Shell Scripting ?
+
+A shell scripting is a list of commands in a computer program that is run by the Unix shell which is a command line interpreter
+
+A shell script usually has comments that describe the steps. The different operations performed by shell scripts are program execute, file manipulation and text printing.
+
+**Types of shell ?**
+
+```js
+cat /etc/shells
+```
+## What is shebang in linux shell scripting ?
+
+```js
+#!/bin/bash
+```
+
+This **#!** is called shebang or hashbang. The shebang plays an important role in shell scripting, specially while dealing with different types of shell.
+
+The shebang is the combination of the **#** (pound key) and **!** (exclamation mark). This character combination has a special meaning when it is used in the very first line of the script. It is used to specify the interpreter with which the given script will be run by default.
+
+So if the first line of a script is: **#!/bin/bash** it means the interpreter should be bash shell. If the first line is: this.
+
+## How to run first script in linux ?
+
+
+```js
+vi file.sh //Create script
+```
+
+```js
+#!/bin/bash //echo "Hello World"
+```
+
+```js
+chmod +x file.sh //Permission set
+```
+
+```js
+./file.sh //to Execute the shell script
+```
