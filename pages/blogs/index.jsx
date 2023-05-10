@@ -72,8 +72,8 @@ const BlogPage = ({ posts }) => {
           title="Blog posts"
           description={
             <>
-              Hi! I am Thierno !! I started writing articles about my DevOps and
-              cloud learning.
+              Hi! I am Thierno !! I started writing articles on my DevOps Blog
+              and cloud learning.
               <br />
               My goal is to share the concepts I learn, the projects I build,
               and the tasks I perform regarding DevOps. Welcome to my blog!!
