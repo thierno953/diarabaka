@@ -3,6 +3,7 @@ title: Alertmanager
 author: Thierno Barry
 date: 2023-05-10
 tags: [Prometheus]
+description: Configure Prometheus Email Alert Notification using Alertmanager
 bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
 ---
 
@@ -36,7 +37,9 @@ tar -xvf alertmanager-0.25.0.linux-amd64.tar.gz
 
 ```jsx
 cd alertmanager-0.25.0.linux-amd64
+
 sudo mv alertmanager /usr/local/bin/
+
 sudo mv amtool /usr/local/bin/
 ```
 
@@ -44,6 +47,7 @@ sudo mv amtool /usr/local/bin/
 
 ```jsx
 sudo chown alertmanager:alertmanager /usr/local/bin/alertmanager
+
 sudo chown alertmanager:alertmanager /usr/local/bin/amtool
 ```
 
@@ -110,7 +114,7 @@ alert:
       - localhost:9093
 ```
 
-**Reload systemd, and then restart the prometheus services 👍**
+**Reload systemd, and then restart the prometheus services :**
 
 ```jsx
 sudo systemctl daemon-reload

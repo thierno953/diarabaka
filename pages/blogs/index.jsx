@@ -14,7 +14,7 @@ import PageHeading from "@/components/PageHeading/PageHeading";
 
 const BlogPage = ({ posts }) => {
   // pagination
-  const postPerPage = 3;
+  const postPerPage = 10;
   const [currentPage, setCurrentPage] = useState(null);
   const router = useRouter();
 

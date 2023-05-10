@@ -1,0 +1,45 @@
+---
+title: Rules
+author: Thierno Barry
+date: 2023-05-10
+tags: [Prometheus]
+description: Alerting rules are configured in Prometheus in the same way as recording rules.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+**Checking rules**
+
+```jsx
+mkdir rules
+
+sudo nano rules/myrules.yml
+
+./promtool check rules rules/myrules.yml
+
+```
+
+**Recording rules:**
+
+```jsx
+groups:
+  - name: my-rules
+    rules:
+    - record: job:node_memory_MemFree_bytes_percent
+      expr: 100 - (100 * node_memory_MemFree_bytes / node_memory_MemTotal_bytes)
+    - record: job:node_cpu
+      expr: avg without(cpu)(rate(node_cpu_seconds_total{mode="idle"}[5m]))
+```
+
+**Alerting rules:**
+
+```jsx
+groups:
+  - name: my-rules
+    rules:
+    - record: job:node_memory_MemFree_bytes_percent
+      expr: 100 - (100 * node_memory_MemFree_bytes / node_memory_MemTotal_bytes)
+
+    - alert: NodeExporterDown
+      expr: up{job="Node_Exporter"} == 0
+      for: 1m
+```
