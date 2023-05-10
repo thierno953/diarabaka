@@ -17,43 +17,43 @@ We can save the dashboard and can even share with our team members which is one 
 
 **Download the Grafana GPG key with wget, then pipe the output to apt-key. This will add the key to your APT installation's list of trusted keys, which will allow you to download and verify the GPG-signed Grafana package:**
 
-```bash
+```jsx
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 ```
 
 **Next, add the Grafana repository to your APT sources:**
 
-```bash
+```jsx
 sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
 ```
 
 **Refresh your APT cache to update your package lists:**
 
-```bash
+```jsx
 sudo apt update
 ```
 
 **You can now proceed with the installation:**
 
-```bash
+```jsx
 sudo apt install grafana
 ```
 
 **Once Grafana is installed, use systemctl to start the Grafana server:**
 
-```bash
+```jsx
 sudo systemctl start grafana
 ```
 
 **Next, verify that Grafana is running by checking the service's status:**
 
-```bash
+```jsx
 sudo systemctl status grafana
 ```
 
 **Now finally enable the Grafana service which will automatically start the Grafana on boot.**
 
-```bash
+```jsx
 sudo systemctl enable grafana
 ```
 
@@ -61,7 +61,7 @@ sudo systemctl enable grafana
 
   Here you can see login page of Grafana now you will have to login with below Grafana default **UserName** and **Password**
 
-```bash
+```jsx
 Username - admin
 
 password - admin
