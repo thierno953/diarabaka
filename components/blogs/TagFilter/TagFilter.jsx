@@ -18,7 +18,7 @@ function TagFilter({ tags, selectedTag, setSelectedTag, className }) {
           )}
           onClick={() => {
             setSelectedTag(tag);
-            router.push("/blogs");
+            router.push("/blog");
           }}
         >
           {tag} 
