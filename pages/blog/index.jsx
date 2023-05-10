@@ -72,7 +72,7 @@ const BlogPage = ({ posts }) => {
           title="Blog posts"
           description={
             <>
-              Hi! I am Thierno !! I started writing articles on my DevOps Blog
+              Hi! I am Thierno !! I started writing articles on my Blog
               and cloud learning.
               <br />
               My goal is to share the concepts I learn, the projects I build,
