@@ -1,0 +1,139 @@
+---
+title: Cut and Awk Commands
+author: Thierno Barry
+date: 2023-05-10
+tags: [shell-scripting]
+description: The cut command in Unix is a command for cutting out the sections from each line of files and writing the result to standard output.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+It can be used to cut parts of line by byte position, character and field. Basically the cut command slices a line and extracts the text.
+
+```jsx
+cut OPTION... [FILE]...
+
+cut -b 1,2,3 test.txt
+
+cut -c 1,2,3 test.txt
+```
+
+**data:**
+
+```jsx
+ID  Name    Salary   Country
+----------------------------
+1   Jonh    2000    Belgium
+2   Paul    1500    French
+3   Pierre  1300    Belgium
+4   Maria   2500    Italia
+```
+
+**names:**
+
+```jsx
+ID        Name
+--------------
+1        Thierno
+2        Ludo
+3        Axel
+4        Sylvain
+4        Arthur
+5        Loran
+6        Marion
+7        Ninon
+8        Clara
+```
+
+```jsx
+cut -c1.5 names
+```
+
+**countries:**
+
+```jsx
+id,  firstname,  lastname,  email,            profession,   country
+-------------------------------------------------------------------
+100, john,       Doe,      john@gmail.com,    frontend      Belgium
+101, pierre,     Durant,   pierre@gmail.com,  backend       Germany
+103, paul,       Dupon,    paul@gmail.com,    devOps        French
+```
+
+```jsx
+cut -d, -f 2 countries
+
+cut -d, -f 1- countries --output-delimiter=" | "
+
+cut -d, -f 1- countries --output-delimiter=" : "
+```
+
+**-f(field):** **-c** option is useful for fixed-length lines. Most unix files doesn't have fixed-length lines. To extract the useful information we need to cut by fields rather than columns. List of the fields number specified must be separated by comma. Ranges are not described with -f option. **cut** uses **tab** as a default field delimiter but can also work with other delimiter by using **-d** option.
+
+**Note:** Space is not considered as delimiter in UNIX.
+
+**example1:**
+
+```jsx
+systemctl status docker | awk "NR==3 {print}"
+
+systemctl status docker | awk "NR==3 {print}" | cut -d ":" -f 2
+
+systemctl status docker | awk "NR==3 {print}" | cut -d ":" -f 2|cut -d '(' -f 1
+```
+**example2:**
+
+```jsx
+#!/bin/bash
+echo "====status check docker service===="
+status="`systemctl status docker|awk 'NR==3 {print}'|cut -d ':' -f 2|cut -d '(' -f 1`"
+echo $status
+if [ $status = "active"  ];
+then
+	echo "service is running fine....."
+else
+	echo "service is not running"
+fi
+```
+
+### AWK Command
+
+The Awk is a powerful scripting language used for text scripting. It searches and replaces the texts and sorts, validates, and indexes the database.
+
+```jsx
+awk '{print $2}' data
+
+awk '{print $2, $4}' data
+
+awk '{print $NF} data
+
+awk '{if($4 > 2000) print $0}' data
+
+awk '{print if($2=="Jonh"){$3=3000} print $0}' data
+
+awk 'NF==0 {print NR}' data
+```
+
+```jsx
+awk '{print $NF $0}' names
+
+awk '{print NR, $0}' names
+
+awk '{print NR ": " $0}' names
+```
+
+```jsx
+awk -F '{print $4}' countries
+
+awk '/Belgium/ {print $0}' countries
+
+awk '{print NR "- " $0}' countries
+
+awk 'NR==4 {print $0}' countries
+
+awk 'NR=="2", NR=="4" {print $0}' countries
+
+awk 'END {print NR}' countries
+
+awk 'BEGIN{for(i=0;i<=10;i++}-) print i;}'
+
+awk 'BEGIN{while(i<10){i++; print "num is " i}}'
+``` 

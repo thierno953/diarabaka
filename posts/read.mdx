@@ -1,0 +1,55 @@
+---
+title: Read
+author: Thierno Barry
+date: 2023-05-10
+tags: [shell-scripting]
+description: Project to Read the user input and print the status of service in system.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+**Prerequisite:**
+
+Read using shell scripting
+
+## Bash Read Styntax:
+
+```jsx
+read <options> <arguments>
+```
+
+**example1:**
+
+```jsx
+#!/bin/bash
+read -p "What is your name: " name
+read -p "Enter the password: " -s password
+echo $name
+echo $password
+read -p "It will timeout in 10 seconds: " -t 10
+```
+
+## While loop Syntax to read a file:
+
+```jsx
+vi test.txt //This is devOps demo, This is my test of while, let us try
+````
+
+```jsx
+#!/bin/bash
+while read -r line;
+do
+   echo "$line";
+done < test.txt
+```
+
+```jsx
+#!/bin/bash
+echo "Welcome to service status check script "
+read -p "Enter the service name to check its status: " service_name
+if [ -z $service_name ];
+then
+     echo " Please enter a valid service name "
+else
+     systemctl status $service_name
+fi
+```

@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import React from 'react';
-import classes from './Pagination.module.css';
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React from "react";
+import classes from "./Pagination.module.css";
 
 function Pagination({ totalPages, currentPage }) {
   const router = useRouter();
@@ -12,12 +12,18 @@ function Pagination({ totalPages, currentPage }) {
       </p>
       <div className={classes.paginateLinks_container}>
         {currentPage > 1 && (
-          <Link href={`/blog/?page=${currentPage - 1}`} className={classes.paginateLinks}>
+          <Link
+            href={`/blog/?page=${currentPage - 1}`}
+            className={classes.paginateLinks}
+          >
             Prev
           </Link>
         )}
         {currentPage < totalPages && (
-          <Link href={`/blog/?page=${currentPage + 1}`} className={classes.paginateLinks}>
+          <Link
+            href={`/blog/?page=${currentPage + 1}`}
+            className={classes.paginateLinks}
+          >
             Next
           </Link>
         )}

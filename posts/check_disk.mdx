@@ -19,7 +19,7 @@ Read a file content
 Grep command
 ```
 
-## Read a file content?
+### Read a file content?
 
 Read a file content?
 
@@ -40,14 +40,12 @@ Read a file content with conditions
 using more, tail, grep, awk, sed
 ```
 
-## Read a file content with conditions...
+### Read a file content with conditions...
 
 **More command example**:
 
 ```jsx
-more -n filename.txt
-
-Displays text upto specified line
+more -n filename.txt //Displays text upto specified line
 ```
 
 **Read +n filename.txt**
@@ -59,31 +57,24 @@ The text is displayed from the specified line
 **head command example**:
 
 ```js
-head filename
+head filename //By default head command reads top 10 lines from a file
 ```
 
-By default head command reads top 10 lines from a file
-
 ```jsx
-head -n filename
-
-This option displays the top n number of lines of the document
+head -n filename //This option displays the top n number of lines of the document
 ```
 
 **tail command example**:
 
 ```jsx
-tail filename
+tail filename //By default tail command reads last 10 lines from a file
 ```
-
-By default tail command reads last 10 lines from a file
 
 ```jsx
-tail -n filename
+tail -n filename //This option displays the last n number of lines of lines of the document
 ```
-This option displays the last n number of lines of lines of the document
 
-## awk command
+### awk command
 
 The awk command is a powerful method for processing or analyzing text or data files, which are organized by lines (rows or records) and columns(fileds).
 
@@ -92,24 +83,39 @@ We can use awk as a linux command and alson as a scripting language like bash sh
 Simple awk command syntax:
 
 ```jsx
-awk[options] '[selection_criteria] {action}' input-file
+awk [options] '[selection_criteria] {action}' input-file
 
 cat input-file | awk [options]'[selection_criteria] {action}' input-file
 
-Awk can take the following options:
+Awk //Can take the following options:
 
-    -F fs  To specific a field separator: (Default separator is tab and space)
+    -F fs  //To specific a field separator: (Default separator is tab and space)
 
-    -f file  To specific a file that contains awk script.
+    -f file  //To specific a file that contains awk script.
 
-    -v var=value   To declare a variable.
+    -v var=value  //To declare a variable.
 
 Selection criteria: pattern/condition
 
 Action: It is a logic to perform action on each row/record
 ```
 
-**example** :
+**example 1** :
+
+```js
+df -h
+
+df -h |awk '{print $5}'
+
+df -h |grep /dev/sda3
+
+df -h |grep /dev/sda3 |awk '{print $5}'
+
+df -h |grep /dev/sda3 |awk '{print $5}' |cut -d '%' -f1
+```
+
+
+**example 2** :
 
 ```jsx
 #!/bin/bash
@@ -124,7 +130,7 @@ else
 if
 ```
 
-## du command
+### du command
 
 The du command is a standard Linux/Unix command that allows a user to get disk usage information quickly.
 
@@ -142,7 +148,7 @@ Usage:
 du -ah /tmp  //It list the size of all files and directory in the path /tmp in human readable format.
 ```
 
-## sort command
+### sort command
 
 SORT command is used to a file, arranging the records in a particular order.
 
@@ -197,7 +203,7 @@ echo "This is the list of big files in the file system $path"
 cat /tmp/filesize.txt
 ```
 
-## find command
+### find command
 
 It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions.
 
@@ -208,19 +214,19 @@ find . file_name //file the file with name File_name in the current working dire
 ```
 We can specify any other location also.
 
-## mtime command
+### Mtime command
 
 Modified timestamp (mtime) indicates the last time the contents of a file were modified. For example, if new contents were added, deleted, or replace in d file the modified timestamp is changed.
 
 ```jsx
-+n for greater then n, -n for less than n, n for exactly n
++n //For greater then n, -n for less than n, n for exactly n.
 ```
 
 ```jsx
 -mtime +30  //Get the files greater than 30 days.
 ```
 
-## Demo Time
+### Demo Time
 
 ```jsx
 find . -mtime +30 -delete**
@@ -238,7 +244,7 @@ echo "This script delete files which are older than 30 days "
 path="$1"
 echo $path
 find $path -mtime +30 -delete
-if [[$? -eq 0 ]];
+if [[ $? -eq 0 ]];
 then
    echo "Files are successfully deleted "
 else

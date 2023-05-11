@@ -6,6 +6,7 @@ import Link from "next/link";
 import { format } from "date-fns";
 
 const BlogItemCard = ({ post }) => {
+
   return (
     <div className={classes.blogPostContainer}>
       <h5 className={globalClasses.h3}>{post.frontmatter.title}</h5>

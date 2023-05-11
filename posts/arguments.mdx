@@ -1,0 +1,78 @@
+---
+title: Arguments
+author: Thierno Barry
+date: 2023-05-10
+tags: [shell-scripting]
+description: Command-line arguments are parameters that are passed to a script while executing them in the bash shell.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+They are also known as positional parameters in Linux.
+
+We use command-line arguments to demote the position in memnory where the command and it's associated parameters are stored. Understanding the command-line arguments is essential for people who are learning shell scripting.
+
+**example1:**
+
+```jsx
+#!/bin/bash
+echo "This is my shell script name: $0 "
+echo "This is first argument passed to my script: $1"
+echo "This is second argument passed to my script: $2"
+echo "This is third argument passed to my script: $3"
+if [ $# -eq 0 ];
+then
+   echo "Please pass atleast 1 argument "
+else
+   echo "Arguments passed is: $#"
+fi
+```
+
+```js
+chmod +x file1.sh
+
+.file1.sh name age country
+```
+
+**example2:**
+
+```jsx
+#!/bin/bash
+#Author: Thierno
+#Installing multiple packages
+
+if [[ $# -eq 0 ]]
+then
+  echo "Usage: please provide software names as command line arguments"
+  exit 1
+fi
+
+if [[ $(id -u) -ne 0 ]]
+then
+  echo "Please run from root user or with sudo privilage"
+  exit 2
+fi
+
+for softwares in $@
+do
+  if which $softwares &> /dev/null
+  then
+     echo "Already $softwares is installed"
+  else
+     echo "Installing $softwares ......"
+     yum install $softwares -y &> /dev/null
+     if [[ $? -eq 0 ]]
+     then
+       echo "Successfully installed $softwares packages"
+     else
+       echo "Unable to install  $softwares"
+     fi
+  fi
+
+done
+```
+
+```js
+chmod +x file2.sh
+
+.file2.sh git httpd docker
+```

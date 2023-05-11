@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import classes from "./TagFilter.module.css";
 
-function TagFilter({ tags, selectedTag, setSelectedTag, className }) {
+function TagFilter({ tags, selectedTag, setSelectedTag }) {
   const router = useRouter();
   return (
     <div className={classes.tagsfilter}>

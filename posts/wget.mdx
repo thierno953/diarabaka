@@ -1,0 +1,47 @@
+---
+title: Wget in Linux
+author: Thierno Barry
+date: 2023-05-10
+tags: [shell-scripting]
+description: Wget is a free utility for non-interactive download of files from the web. It supports HTTP, HTTPS, and FTP protocols, and retrieval through HTTP proxies.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+**Prerequisites**:
+
+```jsx
+Wget
+
+How to check file exists or not using -e
+```
+
+**Wget** is non-interactive, meaning that can work in the background, while the user is not logget on, which allows you to start a retrieval and disconnect from the system, letting "wget" finish the work. By constrast, most web browsers require constant user interaction, which make transferring a lot of data difficult.
+
+### Installing wget
+
+```jsx
+sudo yum install wget -y
+
+sudo apt-get install wget -y
+```
+
+**Wget Syntax
+
+```jsx
+rpm -qa | grep wget
+```
+
+```jsx
+#!/bin/bash
+echo  Download the prometheus binaries"
+if [ -e /home/vagrant/prometheus-2.43.1.linux-amd64.tar.gz ];
+then
+      echo "file is already existing so no need to download "
+      tar -zxvf /home/vagrant/prometheus-2.43.1.linux-amd64.tar.gz
+else
+      echo "binary does not exists in system first we need to download it"
+      wget https://github.com/prometheus/prometheus/releases/download/v2.43.1/prometheus-2.43.1.linux-amd64.tar.gz
+      tar -zxvf /home/vagrant/prometheus-2.43.1.linux-amd64.tar.gz
+      echo "file has been extracted, you can start prometheus"
+fi
+```
