@@ -30,7 +30,7 @@ const BlogPage = ({ posts }) => {
 
   const allTagsArr = [...allTagsSet].sort((a, b) => a.localeCompare(b));
   allTagsArr.unshift("all");
- // console.log(allTagsArr);
+  // console.log(allTagsArr);
 
   useEffect(() => {
     let tempPosts = [...posts];
@@ -45,7 +45,7 @@ const BlogPage = ({ posts }) => {
     const start = (page - 1) * postPerPage;
     const end =
       start + postPerPage > posts.length - 1
-        ? posts.length 
+        ? posts.length
         : start + postPerPage;
     const paginatedPosts = tempPosts.slice(start, end);
     setFilteredPosts(paginatedPosts);
@@ -55,10 +55,9 @@ const BlogPage = ({ posts }) => {
 
   // pagination
   const totalPages =
-    selectedTag <= "all"
+    selectedTag === "all"
       ? Math.ceil(posts.length / postPerPage)
       : Math.ceil(filteredPosts.length / postPerPage);
-
 
   return (
     <>

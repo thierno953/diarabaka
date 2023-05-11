@@ -1,0 +1,100 @@
+---
+title: Sed
+author: Thierno Barry
+date: 2023-05-10
+tags: [shell-scripting]
+description: Sed command statds for stream editor.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+### What is sed?
+
+- Sed command performs lot of functions like :
+
+**Viewing file contents**
+
+**Searching**
+
+**Find and Replace**
+
+**Insertion and deletion**
+
+Sed also supports regular expressions which allows it perform complex pattern matching.
+
+#### Avantages of sed over vi/vim editor:
+
+Sed can perform any operations on file without opening the file.
+
+Sed syntax:
+
+```jsx
+Sed [options] commands [file-to-work-with-sed]
+```
+
+filename.txt
+
+```jsx
+1  Test
+2  this is just for test command
+3  Devops is amazing
+4  Linux is mandatory for devops engineers
+5  How wonderful our life will be if we get dream job
+6  I love devops
+7  Terraform is good tool
+8  Sed is amazing
+9  I know programming
+```
+
+#### Viewing file contents using sed command
+
+```jsx
+sed '' filename.txt
+
+sed 'p' filename.txt //It will print output twice.
+
+sed -n 'p' filename.txt //This will ignore 2 times print.
+
+sed -n '$p' filename.txt //This will print last line.
+
+sed -n '5,10p' filename.txt //It will print 3rd to 10th line.
+
+sed '10d' filename.txt //Only while displaying Delete 10th line number.
+
+sed -i '2,10d' filename.txt //Delete in original file itself.
+
+sed -i.back '2,10d' filename.txt //This will take backup before delete.
+```
+
+#### Find and Replace with sed
+
+```jsx
+sed 's/root/devops' filename.txt //Substitute root with devops 1st word occurrence with new word
+
+sed 's/root/devops/g' filename.txt //Substitute root with devops globally in whole file
+
+sed -i.back 's/root/devops/g' filename.txt //Changed original file itself
+
+sed '/search/s/old/new/g' filename.txt //Replaces the old word with new word if that new line consists of search word.
+```
+
+**example:**
+
+```jsx
+sed 's/root/devops/' /etc/passwd
+
+sed 's/root/devops/g' /etc/passwd
+
+sed 's/root/devops/' /etc/passwd
+```
+
+#### Insertion and deletion with sed command
+
+```jsx
+Insert a new line (sed 'line_numberi' filename)
+
+Sed -i (1i s_no name) filename
+
+Sed -i '1a ---------------' filename.txt
+
+i and a (Insert before and insert after)
+``` 
