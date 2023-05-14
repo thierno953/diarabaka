@@ -5,7 +5,7 @@ import { FiArrowRight } from "react-icons/fi";
 import Link from "next/link";
 import { format } from "date-fns";
 
-const BlogItemCard = ({ post }) => {
+const BlogItemCard = ({ post, showMore, setShowMore }) => {
 
   return (
     <div className={classes.blogPostContainer}>

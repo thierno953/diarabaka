@@ -14,7 +14,7 @@ import PageHeading from "@/components/PageHeading/PageHeading";
 
 const BlogPage = ({ posts }) => {
   // pagination
-  const postPerPage = 20;
+  const postPerPage = 10;
   const [currentPage, setCurrentPage] = useState(null);
   const router = useRouter();
 
@@ -45,14 +45,14 @@ const BlogPage = ({ posts }) => {
     const start = (page - 1) * postPerPage;
     const end =
       start + postPerPage > posts.length - 1
-        ? posts.length
+        ? posts.length 
         : start + postPerPage;
     const paginatedPosts = tempPosts.slice(start, end);
     setFilteredPosts(paginatedPosts);
 
     //setFilteredPosts(tempPosts);
   }, [selectedTag, posts, router]);
-
+  
   // pagination
   const totalPages =
     selectedTag === "all"

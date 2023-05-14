@@ -1,13 +1,13 @@
 ---
 title: Linux Commands
 author: Thierno Barry
-date: 2023-05-11
+date: 2023-05-13
 tags: [linux-commands]
 description: Linux User Account Management using USERADD, USERMOD, GROUPADD
 bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
 ---
 
-# File
+### File
 
 ```jsx
 /etc/passwd
@@ -17,7 +17,7 @@ bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
 /etc/shadow
 ```
 
-### How to create a user ?
+How to create a user ?
 
 ```jsx
 useradd <user_name>
@@ -27,13 +27,13 @@ less /etc/passwd
 useradd -g <group_name> -s /bin/bash -c "description" -m -d /home/<user_name> <user_name>
 ``` 
 
-### How to identify if a user is created ?
+How to identify if a user is created ?
 
 ```js
 id <user_name>
 ```
 
-### How to delete a user ?
+How to delete a user ?
 
 ```jsx
 userdel <name_of_user>
@@ -43,7 +43,7 @@ userdel -r (will remove home directory)
 userdel -f (force delete even if the user is logged in)
 ```
 
-### How to modify a user ?
+How to modify a user ?
 
 To add user to a new group, but default group will remain same.
 
@@ -57,7 +57,7 @@ To change the default group
 usermod -g <group_name><user_name>
 ```
 
-### Other usermod options:
+Other usermod options:
 
 **-m -d /home/newfolder** (to move the content of home folder to this new folder)
 
@@ -83,7 +83,7 @@ usermod -L <user_name>
 usermod -U <user_name>
 ```
 
-### How to create a group ?
+How to create a group ?
 
 ```jsx
 groupadd <group_name>
@@ -91,7 +91,7 @@ groupadd <group_name>
 less /etc/group
 ```
 
-### To add a user to the group
+To add a user to the group
 
 ```jsx
 usermod -aG <group_name><user_name>
@@ -103,7 +103,7 @@ usermod -aG <group_name><user_name>
 groupdel <group_name>
 ```
 
-### To remove a user from the group
+To remove a user from the group
 
 ```jsx
 gpasswd -d <user_name><group_name>

@@ -1,15 +1,22 @@
 ---
 title: Sed
 author: Thierno Barry
-date: 2023-05-10
+date: 2023-05-14
 tags: [shell-scripting]
-description: Sed command statds for stream editor.
+description: Sed (stream editor) is a Unix utility that parses and transforms text, using a simple, compact programming language.
 bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
 ---
 
 ### What is sed?
 
-- Sed command performs lot of functions like :
+Sed is a line-oriented text processing utility: it reads text, line by line, from an input stream or file, into an internal buffer called the pattern space. Each line read starts a cycle.
+
+To the pattern space, sed applies one or more operations which have been specified via a sed script. sed implements a programming language with about 25 commands that specify the operations on the text.
+
+For each input line, after running the script, sed ordinarily outputs the pattern space (the line as modified by the script) and begins the cycle again with the next line. 
+
+
+### Sed command performs lot of functions like :
 
 **Viewing file contents**
 
@@ -31,7 +38,7 @@ Sed syntax:
 Sed [options] commands [file-to-work-with-sed]
 ```
 
-filename.txt
+**filename.txt**
 
 ```jsx
 1  Test

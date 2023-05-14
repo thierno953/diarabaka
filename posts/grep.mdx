@@ -1,7 +1,7 @@
 ---
 title: Grep
 author: Thierno Barry
-date: 2023-05-10
+date: 2023-05-14
 tags: [shell-scripting]
 description: Write a shell script to chack errors in error logs.
 bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
@@ -17,17 +17,31 @@ The grep filter searches a file for a particular pattern of characters, and disp
 grep [options] pattern [files]
 ```
 
-## Grep Continued..
+### Grep Continued..
 
-**grep -i** amazing devopsclass.txt
+**devopsclass.txt**
 
-**grep -c** devops devopsclass.txt
+```jsx
+id,  firstname, lastname, email,             profession
 
-**grep -w** devops devopsclass.txt[checking whole word]
+1,   John,      Doe,      john@gmail.com,    frontend
+2,   Paul,      Dupont,   paul@gmail.com,    backend
+3,   Pierre,    Duran,    pierre@gmail.com,  devOps
+```
+
+```jsx
+grep -i John devopsclass.txt  //To ignore the upper and lowercase while searching
+
+grep -c John devopsclass.txt   //To print how many times {count} given keyword present in file
+
+grep -w John devopsclass.txt   //To search for exact match of given keyword in a file
+
+grep -n John devopsclass.txt   //To print the line no. of matches of given keyword in a file
+```
 
 Disploying only the matched pattern: By default, grep displays the entire line which has the matched string. We can make the grep to display only the matched string by using the -o option.
 
-**grep -o** devops Disploying only the matched pattern: By default, grep displays the entire line which has the matched string. We can make the grep to display only the matched string by using the -o option.
+**grep -o** devops Disploying only the matched pattern: By default, grep displays the entire line which has the matched string. We can make the grep to display only the matched string by using the **-o** option.
 
 ```jsx
 error_file=`cat /var/log/messages`
