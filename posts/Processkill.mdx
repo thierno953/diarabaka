@@ -1,0 +1,64 @@
+---
+title: Kill command
+author: Thierno Barry
+date: 2023-05-14
+tags: [shell-scripting]
+description: Used to terminate a process manually.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+Syntax of kill command:
+
+```jsx
+kill[OPTIONS][PID];
+```
+
+```jsx
+OPTION = signal name or no.
+
+PID = Process ID
+```
+
+Most Widely used kill commands
+
+```bash
+kill PID
+
+kill -1 PID  //To restart the process
+
+kill -2 PID  //Interrupt from keyboard like Ctrl+c
+
+kill -9 PID  //Forcefully terminate the process
+
+kill -15 PID //Kill process gracefully
+
+kill -l      //All process
+```
+
+
+**example1:**
+
+```jsx
+ps -ef | grep sleep
+
+pidof sleep
+
+kill -9 (id)
+```
+
+**example2:**
+
+```jsx
+
+#!/bin/bash
+echo "This script kill Process which is taking maximum memory"
+Processid=`ps au --sort -%mem | head -10 | awk '{print $2}' | awk ' NR==2'`
+echo $Processid
+kill -9 $Processid
+if [[ $? -eq 0 ]];
+then
+echo "Process is killed successfully"
+else
+echo "some issue in kill"
+fi
+```
