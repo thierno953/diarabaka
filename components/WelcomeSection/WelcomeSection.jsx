@@ -11,11 +11,11 @@ const WelcomeSection = () => {
       <h1 className={clsx(globalClasses.h1, classes.welcomeText)}>
         Je suis Thierno M Barry
         <br />
-        <span>dévéloppeur full stack basé en Belgique.</span>
+        <span>développeur full stack basé en Belgique.</span>
         <br />
         Spécialisé dans les applications javascript.
         <br />
-        <span>J'apprends actuellement DevOps et System Admin.</span>
+        <span>Japprends actuellement DevOps et System Admin.</span>
       </h1>
       <Image
         src={ThiernoImage}
