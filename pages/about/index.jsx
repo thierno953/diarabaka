@@ -22,19 +22,19 @@ const AboutPage = () => {
             <div className={classes.aboutMeTextWrapper}>
               <p>
                 Salut 👋 <br /><br />
-                Je m'appelle Thierno Barry, je suis un dévéloppeur full
+                Je m&lsquo;appelle Thierno Barry, je suis un dévéloppeur full
                 stack basé en Belgique.
               </p>
               <p>
                 En tant que développeur Web MERN stack, je me spécialise dans la
-                création d'applications Web dynamiques et modernes à l'aide de{" "}
+                création d&lsquo;applications Web dynamiques et modernes à l&lsquo;aide de{" "}
                 <span className={classes.aboutSpan}>
                   React, NextJS, TypeScript, NodeJS, MongoDB
                 </span>
                 .
               </p>
               <p>
-                J'apprends actuellement DevOps et System Admin comme{" "}
+                J&lsquo;apprends actuellement DevOps et System Admin comme{" "}
                 <span className={classes.aboutSpan}>
                   Shell Script, Github Actions, Gitlab, docker, Kubernetes,
                   Jenkins, Vagrant, Ansible, Terraform, SonarQube, Prometheus,
@@ -44,7 +44,7 @@ const AboutPage = () => {
               </p>
               <p>
                 Avec une base solide en JavaScript , je suis habile à développer
-                à la fois le front-end et le back-end d'applications Web, ce qui
+                à la fois le front-end et le back-end d&lsquo;applications Web, ce qui
                 fait de moi un atout précieux dans le processus de développement
                 du début à la fin.
               </p>
@@ -54,12 +54,12 @@ const AboutPage = () => {
                 expérience utilisateur transparente.
               </p>
               <p>
-                Dans mes temps libres, j'aime explorer des nouvelles
+                Dans mes temps libres, j&lsquo;aime explorer des nouvelles
                 technologies et me tenir au courant des dernières tendances de
-                l'industrie.
+                l&lsquo;industrie.
               </p>
               <p>
-              Je suis à la recherche de nouveaux défis et d'opportunités pour évoluer en tant que développeur fullStack et DevSecOps.
+              Je suis à la recherche de nouveaux défis et d&lsquo;opportunités pour évoluer en tant que développeur fullStack et DevSecOps.
               </p>
             </div>
             <Image

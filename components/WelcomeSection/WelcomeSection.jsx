@@ -15,7 +15,7 @@ const WelcomeSection = () => {
         <br />
         Spécialisé dans les applications javascript.
         <br />
-        <span>Japprends actuellement DevOps et System Admin.</span>
+        <span>J&lsquo;apprends actuellement DevOps et System Admin.</span>
       </h1>
       <Image
         src={ThiernoImage}
