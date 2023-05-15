@@ -21,19 +21,20 @@ const AboutPage = () => {
           <div className={classes.aboutMeContainer}>
             <div className={classes.aboutMeTextWrapper}>
               <p>
-                Hi! My name is Thierno Barry, I am a full stack website
-                developer based in Belgium.
+                Salut 👋 <br /><br />
+                Je m'appelle Thierno Barry, je suis un dévéloppeur full
+                stack basé en Belgique.
               </p>
               <p>
-                As a MERN stack web developer, I specialize in building dynamic,
-                modern web applications using{" "}
+                En tant que développeur Web MERN stack, je me spécialise dans la
+                création d'applications Web dynamiques et modernes à l'aide de{" "}
                 <span className={classes.aboutSpan}>
-                  React, NextJS, NodeJS, ExpressJS, MongoDB
+                  React, NextJS, TypeScript, NodeJS, MongoDB
                 </span>
                 .
               </p>
               <p>
-                I am currently learning DevOps and System Admin{" "}
+                J'apprends actuellement DevOps et System Admin comme{" "}
                 <span className={classes.aboutSpan}>
                   Shell Script, Github Actions, Gitlab, docker, Kubernetes,
                   Jenkins, Vagrant, Ansible, Terraform, SonarQube, Prometheus,
@@ -42,20 +43,23 @@ const AboutPage = () => {
                 .
               </p>
               <p>
-                With a strong foundation in JavaScript, I am skilled at
-                developing both the front-end and back-end of web applications,
-                making me a valuable asset in the development process from start
-                to finish.
+                Avec une base solide en JavaScript , je suis habile à développer
+                à la fois le front-end et le back-end d'applications Web, ce qui
+                fait de moi un atout précieux dans le processus de développement
+                du début à la fin.
               </p>
               <p>
-                My experience with the MERN stack allows me to create fast,
-                responsive, and scalable applications that deliver a seamless
-                user experience.
+                Mon expérience avec la pile MERN me permet de créer des
+                applications rapides, réactives et évolutives qui offrent une
+                expérience utilisateur transparente.
               </p>
               <p>
-                In my spare time, I love to explore new technology and stay up
-                to date on the latest industry trends. I am always looking for
-                new challenges and opportunities to grow as a developer.
+                Dans mes temps libres, j'aime explorer des nouvelles
+                technologies et me tenir au courant des dernières tendances de
+                l'industrie.
+              </p>
+              <p>
+              Je suis à la recherche de nouveaux défis et d'opportunités pour évoluer en tant que développeur fullStack et DevSecOps.
               </p>
             </div>
             <Image

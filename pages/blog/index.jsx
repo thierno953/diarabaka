@@ -14,7 +14,7 @@ import PageHeading from "@/components/PageHeading/PageHeading";
 
 const BlogPage = ({ posts }) => {
   // pagination
-  const postPerPage = 25;
+  const postPerPage = 3;
   const [currentPage, setCurrentPage] = useState(null);
   const router = useRouter();
 
@@ -45,14 +45,14 @@ const BlogPage = ({ posts }) => {
     const start = (page - 1) * postPerPage;
     const end =
       start + postPerPage > posts.length - 1
-        ? posts.length 
+        ? posts.length
         : start + postPerPage;
     const paginatedPosts = tempPosts.slice(start, end);
     setFilteredPosts(paginatedPosts);
 
     //setFilteredPosts(tempPosts);
   }, [selectedTag, posts, router]);
-  
+
   // pagination
   const totalPages =
     selectedTag === "all"
@@ -69,14 +69,15 @@ const BlogPage = ({ posts }) => {
       </Head>
       <main className={globalClasses.container}>
         <PageHeading
-          title="Blog posts"
+          title="Le contenu du blog"
           description={
             <>
-              Hi! I am Thierno !! I started writing articles on my Blog and
-              cloud learning.
+              J'ai commencé à écrire des articles sur mon blog et à apprendre
+              dans le cloud.
               <br />
-              My goal is to share the concepts I learn, the projects I build,
-              and the tasks I perform regarding DevOps. Welcome to my blog!!
+              Mon objectif est de partager les concepts que j'apprends, les
+              projets que je construis et les tâches que j'effectue concernant
+              DevOps et System Admin. <br /><br /> Bienvenue sur mon blog!
             </>
           }
         />
