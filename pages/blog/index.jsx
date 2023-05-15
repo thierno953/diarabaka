@@ -72,11 +72,11 @@ const BlogPage = ({ posts }) => {
           title="Le contenu du blog"
           description={
             <>
-              J'ai commencé à écrire des articles sur mon blog et à apprendre
+              J&#39;ai commencé à écrire des articles sur mon blog et à apprendre
               dans le cloud.
               <br />
-              Mon objectif est de partager les concepts que j'apprends, les
-              projets que je construis et les tâches que j'effectue concernant
+              Mon objectif est de partager les concepts que j&#39;apprends, les
+              projets que je construis et les tâches que j&#39;effectue concernant
               DevOps et System Admin. <br /><br /> Bienvenue sur mon blog!
             </>
           }
