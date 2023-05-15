@@ -1,0 +1,85 @@
+---
+title: Introduction Jenkins
+author: Thierno Barry
+date: 2023-05-15
+tags: [jenkins]
+description: Jenkins est un outil d'automatisation open-source écrit en Java avec des plugins conçus pour une intégration continue.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+**Jenkins** est utilisé pour construire et tester nos projets logiciels en continu, ce qui permet aux développeurs d'intégrer plus facilement les modifications apportées au projet et aux utilisateurs d'obtenir plus facilement une nouvelle version. Il nous permet également de livrer en continu notre logiciel en s'intégrant à un grand nombre de technologies de test et de déploiement.
+
+### Configurer Jenkins sous Linux
+
+```jsx
+#Installez Java OpenJDK
+sudo yum -y install epel-release
+sudo yum -y install java-11-openjdk
+
+#Assurez-vous que Java est installé en exécutant:
+java -version
+
+#Commencez par importer la clé du référentiel depuis Jenkins:
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+#Après avoir importé la clé, ajoutez le dépôt au système:
+sudo yum -y install wget
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+#Ensuite, installez le package Jenkins en utilisant  yum:
+sudo yum -y install jenkins
+
+#Vous pouvez maintenant démarrer le service Jenkins en utilisant:
+sudo systemctl start jenkins
+
+#Une vérification de l'état devrait renvoyer l'état de fonctionnement
+systemctl status jenkins
+```
+
+Activer le port 8080/tcp sur le pare-feu :
+
+```jsx
+sudo firewall-cmd --add-port=8080/tcp --permanent
+sudo firewall-cmd --reload
+sudo firewall-cmd --list-all
+```
+
+Le service doit être à l'écoute sur le port 8080
+
+```jsx
+sudo ss -tunelp | grep 8080
+```
+
+Accédez à l'URL pour accéder à l'assistant d'installation Web.
+
+```jsx
+http://[serverip_or_hostname]:8080
+```
+
+Lorsque `vous` accédez pour la première fois à une nouvelle instance Jenkins, il vous est demandé de la déverrouiller à l'aide d'un mot de passe généré automatiquement.
+
+![test-img-public](/images/1.png)
+
+Obtenez le mot de passe de
+
+```jsx
+$ cat /var/lib/jenkins/secrets/initialAdminPassword
+
+  fffa2e69268949e9b76bc657339e5ac8
+```
+
+Copiez-collez le mot de passe alphanumérique généré automatiquement dans le champ Mot de passe administrateur et cliquez sur Continuer .
+
+![test-img-public](/images/2.png)
+
+Sélectionnez les plugins à installer dans la page suivante.
+
+![test-img-public](/images/3.png)
+
+Ensuite, créez un compte d'utilisateur administrateur utilisé pour gérer le serveur Jenkins.
+
+![test-img-public](/images/4.png)
+
+Configurer
+
+![test-img-public](/images/5.png)
