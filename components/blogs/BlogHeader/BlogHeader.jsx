@@ -15,7 +15,7 @@ const BlogHeader = ({ frontmatter }) => {
       {frontmatter.date && (
         <h5 className={globalClasses.h5}>
           {format(new Date(frontmatter.date), "PPP")}
-        </h5> 
+        </h5>
       )}
       {frontmatter.tags && (
         <p className={classes.tags}>
@@ -29,9 +29,7 @@ const BlogHeader = ({ frontmatter }) => {
         </p>
       )}
       {frontmatter.description && (
-        <p className={classes.description}>
-          Description: {frontmatter.description}
-        </p>
+        <p className={classes.description}>{frontmatter.description}</p>
       )}
     </div>
   );

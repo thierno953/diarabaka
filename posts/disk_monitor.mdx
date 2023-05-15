@@ -1,0 +1,67 @@
+---
+title: Monitor disk
+author: Thierno Barry
+date: 2023-05-15
+tags: [shell-scripting]
+description: Shell scripting to create a service to monitor disk.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+We want to create a service in Linux system which will monitor the disk usage every 2 mins and store the information in a log file.
+
+### What is service in Linux?
+
+In easy terms, a service is a program or application in Linux that runs or expects to run in the background. That is, it is running without the need for the user to be aware of it all the time. Generally, a Linux service has the following characteristics: No graphical interface.
+
+### Service Concept Continued...
+
+**UNIT:** Name of the service
+
+**LOAD:** To know if it is loaded in the memory
+
+**ACTIVE:** State in which it is (High level) can be active, reloading, inactive, failed, activating, desactivating.
+
+**SUB:** State of activation (LOW level) can be in one of the following **states:** dead, `closed`, failed, inactive or running.
+
+**Description:** Brief description of the service.
+
+The **[Unit]** section consists of description, documentation detail etc.
+
+**[Service]** Section defines the service type, username, group, what to do in failure, restart timeout. The main is **'ExecStart'** which says to start our script file. You can also define **'ExecStartPre'** to define anything before the actual script file. **'SyslogIdentifier'** is the keyword to identify our service in syslog. Similary, '**ExecStop'** is the instruction to say what to do stopt the service.
+
+**[Install]** section is used to define different levels of target in the system.
+
+**vim disk_monitor.sh**
+
+```jsx
+#!/bin/bash
+#Script check filesystem utilization every 120 seconds store in a file
+while true
+do
+date >> /var/log/fs-monitor.txt
+sudo df -h >> /var/log/fs-monitor.txt
+sleep 120
+done
+```
+
+**vim /etc/systemd/system/fs-monitor.service**
+
+```jsx
+[Unit]
+Description=FS monitoring service
+Documentation=https://diarabaka.vercel.app
+
+[Service]
+type=simple
+User=root
+Group=root
+TimeoutStartSec=0
+Restart=on-failure
+#ExecStartPre=
+ExecStart=/home/vagrant/disk_monitor.sh
+SyslogIdentifier=Diskutilization
+#ExecStop
+
+[Install]
+WantedBy=multi-user.target
+```

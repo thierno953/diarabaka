@@ -1,0 +1,29 @@
+---
+title: CPU Load alert
+author: Thierno Barry
+date: 2023-05-15
+tags: [shell-scripting]
+description: If we are using any Linux server, we are familiar with the system load or load average term.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+Measuring the system load or load average is typical to understand how our servers are working; if overload, we need to optimize or kill the processes that are consuming high resource amounts, or give other resources for balancing the workload.
+
+Two essential terms in each Unix-like systems:
+
+**Load average:** Load average is an average system load measured on a provided time of 15, 5, and 1 minute.
+
+**CPU load/System load:** CPU load/System load is a calculation of CPU under or over utilization in the Linux system; the processes that are in waiting state or being run via the CPU.
+
+```jsx
+#!/bin/bash
+echo "CPU Load average value check"
+load=`top -bn1 | grep load | awk '{printf "%.2f%%\t\t\n", $(NF-2)}' | cut -d '%' -f1`
+echo $load
+if [[ ${load%.*} > 1 ]];
+then
+    echo "cpu load is very high: $load"
+else
+    echo "Load is normal"
+fi
+```
