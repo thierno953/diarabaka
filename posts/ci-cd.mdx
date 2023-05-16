@@ -1,0 +1,70 @@
+---
+title: CI/CD
+author: Thierno Barry
+date: 2023-05-16
+tags: [jenkins]
+description: CI/CD est une méthode pour fournir fréquemment des applications aux clients en introduisant l'automatisation dans les étapes de livraison continue et de déploiement continu.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+CI/CD est une solution aux problèmes que l'intégration d'un nouveau code peut poser aux équipes de développement et d'exploitation (**AKA "integration hell"**).
+
+**exemple:**
+
+```jsx
+| Continuous Integration  | Continuous Delivery   | Continuous Deployement  |
+| :---                    |    :----:             |          ---:           |
+| Build                   | Automatically Release | Automatically Deploy    |
+| Test                    |   To                  |   To                    |
+| Merge                   | Repository            | Production              |
+```
+
+### CI continued...
+
+### Intégration continue (CI)
+
+Les développeurs pratiquant l'intégration continue fusionnent leurs modifications vers la branche principale aussi souvent que possible. Les modifications du développeur sont validées en créant un build et en exécutant des tests automatisés sur le build. Ce faisant, vous évitez les problèmes d'intégration qui peuvent survenir lorsque vous attendez le jour de la publication pour fusionner les modifications dans la branche de publication.
+
+L'intégration continue met l'accent sur l'automatisation des tests pour vérifier que l'application n'est pas cassée chaque fois que de nouveaux commits sont intégrés dans la branche principale.
+
+> #### Ce dont vous avez besoin 👍
+>
+> > 1 - Votre équipe devra écrire des tests automatisés pour chaque nouvelle fonctionnalité, amélioration ou correction de bugs.
+>
+> > 2 - Vous avez besoin d'un serveur d'intégration continue capable de surveiller le référentiel principal et d'exécuter les tests automatiquement pour chaque nouveau commit poussé.
+>
+> > 3 - Developers need
+
+### Continuous deployment (CD)
+
+Le déploiement continu va plus loin que la livraison continue. Avec cette pratique, chaque modification qui franchit toutes les étapes de votre pipeline de production est publiée pour vos clients. Il n'y a aucune intervention humaine, et seul un test raté empêchera qu'un nouveau changement soit déployé en production.
+
+Le déploiement continu est un excellent moyen d'accélérer la boucle de rétroaction avec vos clients et de soulager l'équipe car il n'y a plus de "jour de publication". Les développeurs peuvent se concentrer sur la création de logiciels et ils voient leur travail être mis en ligne quelques minutes après avoir fini de travailler dessus.
+
+### CD continuous delivery...
+
+Livraison continue
+
+La livraison continue est une extension de l'intégration continue puisqu'elle déploie automatiquement toutes les modifications de code dans un environnement de test et/ou de production après l'étape de construction.
+
+Cela signifie qu'en plus des tests automatisés, vous disposez d'un processus de publication automatisé et que vous pouvez déployer votre application à tout moment en cliquant sur un bouton.
+
+> #### Ce dont vous avez besoin 👍
+>
+> > 1 - Vous avez besoin d'une base solide en intégration continue et votre test doit couvrir suffisamment votre base de code.
+>
+> > 2 - Les déploiements doivent être automatisés. Le déclencheur est toujours manuel, mais une fois qu'un déploiement est lancé, aucune intervention humaine ne devrait être nécessaire.
+>
+> > 3 - Votre équipe devra très probablement adopter des indicateurs de fonctionnalité afin que les fonctionnalités incomplètes n'affectent pas les clients en production.
+>
+> #### Ce que vous gagnez
+>
+> > 1 - La complexité du logiciel de déploiement a été supprimée. Votre équipe n'a plus besoin de passer des jours à préparer une version.
+>
+> > 2 - Vous pouvez publier plus souvent, accélérant ainsi la boucle de rétroaction avec vos clients.
+>
+> > 3 - Il y a beaucoup moins de pression sur les décisions pour les petits changements, ce qui encourage une itération plus rapide.
+
+### Plugins in Jenkins
+
+Les plugins sont le principal moyen d'améliorer les fonctionnalités d'un environnement Jenkins pour répondre aux besoins spécifiques de l'organisation ou de l'utilisateur. Il existe plus d'un millier de plugins différents qui peuvent être installés sur un contrôleur Jenkins et pour intégrer divers outils de construction, fournisseurs de cloud, outils d'analyse, et bien plus encore.
