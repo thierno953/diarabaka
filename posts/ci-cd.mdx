@@ -3,11 +3,11 @@ title: CI/CD
 author: Thierno Barry
 date: 2023-05-16
 tags: [jenkins]
-description: CI/CD est une méthode pour fournir fréquemment des applications aux clients en introduisant l'automatisation dans les étapes de livraison continue et de déploiement continu.
+description: CI/CD is a method for frequently delivering applications to customers by introducing automation in the continuous delivery and continuous deployment stages.
 bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
 ---
 
-CI/CD est une solution aux problèmes que l'intégration d'un nouveau code peut poser aux équipes de développement et d'exploitation (**AKA "integration hell"**).
+CI/CD is a solution to the problems that integrating new code can cause for development and operations teams  (**AKA "integration hell"**).
 
 **exemple:**
 
@@ -21,19 +21,31 @@ CI/CD est une solution aux problèmes que l'intégration d'un nouveau code peut 
 
 ### CI continued...
 
-### Intégration continue (CI)
+### Continuous Integration (CI)
 
 Les développeurs pratiquant l'intégration continue fusionnent leurs modifications vers la branche principale aussi souvent que possible. Les modifications du développeur sont validées en créant un build et en exécutant des tests automatisés sur le build. Ce faisant, vous évitez les problèmes d'intégration qui peuvent survenir lorsque vous attendez le jour de la publication pour fusionner les modifications dans la branche de publication.
 
 L'intégration continue met l'accent sur l'automatisation des tests pour vérifier que l'application n'est pas cassée chaque fois que de nouveaux commits sont intégrés dans la branche principale.
 
-> #### Ce dont vous avez besoin 👍
->
-> > 1 - Votre équipe devra écrire des tests automatisés pour chaque nouvelle fonctionnalité, amélioration ou correction de bugs.
->
-> > 2 - Vous avez besoin d'un serveur d'intégration continue capable de surveiller le référentiel principal et d'exécuter les tests automatiquement pour chaque nouveau commit poussé.
->
-> > 3 - Developers need
+#### Ce dont vous avez besoin 👍
+
+1 - Votre équipe devra écrire des tests automatisés pour chaque nouvelle fonctionnalité, amélioration ou correction de bugs.
+
+2 - Vous avez besoin d'un serveur d'intégration continue capable de surveiller le référentiel principal et d'exécuter les tests automatiquement pour chaque nouveau commit poussé.
+
+3 -  Les développeurs doivent fusionner leurs changements aussi souvent que possible, au moins une fois par jour.
+
+#### Ce que vous gagnez
+
+1 - Moins de bogues sont envoyés en production car les régressions sont capturées tôt par les tests automatisés.
+
+2 - La construction de la version est facile car tous les problèmes d'intégration ont été résolus tôt.
+
+3 - Moins de changement de contexte car les développeurs sont alertés dès qu'ils cassent la construction et peuvent travailler à la réparer avant de passer à une autre tâche.
+
+4 -  Les coûts de test sont considérablement réduits, votre serveur CI peut exécuter des centaines de tests en quelques secondes.
+
+5 - Votre équipe QA passe moins de temps à tester et peut se concentrer sur des améliorations significatives de la culture qualité.
 
 ### Continuous deployment (CD)
 
@@ -49,22 +61,24 @@ La livraison continue est une extension de l'intégration continue puisqu'elle d
 
 Cela signifie qu'en plus des tests automatisés, vous disposez d'un processus de publication automatisé et que vous pouvez déployer votre application à tout moment en cliquant sur un bouton.
 
-> #### Ce dont vous avez besoin 👍
->
-> > 1 - Vous avez besoin d'une base solide en intégration continue et votre test doit couvrir suffisamment votre base de code.
->
-> > 2 - Les déploiements doivent être automatisés. Le déclencheur est toujours manuel, mais une fois qu'un déploiement est lancé, aucune intervention humaine ne devrait être nécessaire.
->
-> > 3 - Votre équipe devra très probablement adopter des indicateurs de fonctionnalité afin que les fonctionnalités incomplètes n'affectent pas les clients en production.
->
-> #### Ce que vous gagnez
->
-> > 1 - La complexité du logiciel de déploiement a été supprimée. Votre équipe n'a plus besoin de passer des jours à préparer une version.
->
-> > 2 - Vous pouvez publier plus souvent, accélérant ainsi la boucle de rétroaction avec vos clients.
->
-> > 3 - Il y a beaucoup moins de pression sur les décisions pour les petits changements, ce qui encourage une itération plus rapide.
+#### Ce dont vous avez besoin 👍
+
+1 - Vous avez besoin d'une base solide en intégration continue et votre test doit couvrir suffisamment votre base de code.
+
+2 - Les déploiements doivent être automatisés. Le déclencheur est toujours manuel, mais une fois qu'un déploiement est lancé, aucune intervention humaine ne devrait être nécessaire.
+
+3 - Votre équipe devra très probablement adopter des indicateurs de fonctionnalité afin que les fonctionnalités incomplètes n'affectent pas les clients en production.
+
+#### Ce que vous gagnez
+
+1 - La complexité du logiciel de déploiement a été supprimée. Votre équipe n'a plus besoin de passer des jours à préparer une version.
+
+2 - Vous pouvez publier plus souvent, accélérant ainsi la boucle de rétroaction avec vos clients.
+
+3 - Il y a beaucoup moins de pression sur les décisions pour les petits changements, ce qui encourage une itération plus rapide.
 
 ### Plugins in Jenkins
 
 Les plugins sont le principal moyen d'améliorer les fonctionnalités d'un environnement Jenkins pour répondre aux besoins spécifiques de l'organisation ou de l'utilisateur. Il existe plus d'un millier de plugins différents qui peuvent être installés sur un contrôleur Jenkins et pour intégrer divers outils de construction, fournisseurs de cloud, outils d'analyse, et bien plus encore.
+
+![test-img-public](/images/6.png)

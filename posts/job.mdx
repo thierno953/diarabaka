@@ -1,0 +1,44 @@
+---
+title: Comment créer un Job
+author: Thierno Barry
+date: 2023-05-16
+tags: [jenkins]
+description: Un job Jenkins est un ensemble séquentiel de tâches qu'un utilisateur définit. Par exemple, une tâche peut récupérer le code source du contrôle de version, compiler le code, exécuter des tests unitaires, etc.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+Notez que dans Jenkins, le terme **job** est synonyme de **project**. De plus, le nombre de types de travaux dépend des plugins que vous avez installés. Par exemple, un projet/job Maven n'est disponible que si vous avez installé les plugins Maven.
+
+### Types de job Jenkins
+
+**Projet Freestyle:**
+
+Ce type de tâche est le type de projet par défaut et est le plus flexible à configurer.
+
+**Pipeline:**
+
+Un pipeline est un moyen de définir l'ensemble de votre processus de génération à l'aide de code sous la forme d'un fichier Jenkins.
+
+### Pipeline job
+
+```jsx
+pipeline {
+   agent any
+
+   stages {
+      stage('Hello') {
+         steps {
+            echo 'Hello World'
+         }
+      }
+   }
+}
+```
+
+### Multi-Branch Pipeline
+
+Un pipeline multi-branches est une extension d'un Job Pipeline. Cependant, il a un moyen de créer automatiquement des pipelines Jenkins basés sur des branches de contrôle de code source. Jenkins peut alors découvrir automatiquement de nouvelles branches dans le contrôle de source, et il peut également créer automatiquement un pipeline pour cette branche.
+
+### Comment enchaîner les jobs
+
+![test-img-public](/images/7.png)

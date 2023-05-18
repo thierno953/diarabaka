@@ -14,7 +14,7 @@ import PageHeading from "@/components/PageHeading/PageHeading";
 
 export default function BlogPage({ posts }) {
    // pagination
-  const postPerPage = 2;
+  const postPerPage = 20;
   const [currentPage, setCurrentPage] = useState(null);
   const router = useRouter();
 
