@@ -1,21 +1,26 @@
 .tagsfilter {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   margin-top: 40px;
+  padding-bottom: 20px;
+}
+.tagsfilter h3 {
+  color: #ffffff;
+  font-weight: 400;
 }
 .tagButton {
   border: none;
   outline: none;
-  background: #787878;
-  color: #ffffff;
-  padding: 8px 10px;
+  background: #223531;
+  color: #f3ebeb;
+  padding: 6px 8px;
   border-radius: 10px;
   cursor: pointer;
 }
 .selected {
-  background: #000000;
-  font-weight: 800;
+  background: #384b47;
+  font-weight: 600;
 }
 
 @media all and (min-width: 960px) {

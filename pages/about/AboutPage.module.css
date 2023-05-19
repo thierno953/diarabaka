@@ -1,6 +1,7 @@
 .aboutContainer {
   margin-top: 40px;
   margin-bottom: 40px;
+  color: #ffffff;
 }
 
 .aboutSpan {
@@ -58,7 +59,7 @@
   margin-top: 30px;
   font-size: 14px;
   color: #ffffff;
-  background: #787878;
+  background: #223531;
   padding: 15px 20px;
   border-radius: 4px;
   text-decoration: none;
@@ -66,7 +67,7 @@
 }
 
 .checkOutCV:hover {
-  background: #000000;
+  background: #384b47;
 }
 
 .skills {

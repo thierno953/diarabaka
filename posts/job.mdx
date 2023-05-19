@@ -1,25 +1,25 @@
 ---
-title: Comment créer un Job
+title: How to create a Job
 author: Thierno Barry
 date: 2023-05-16
 tags: [jenkins]
-description: Un job Jenkins est un ensemble séquentiel de tâches qu'un utilisateur définit. Par exemple, une tâche peut récupérer le code source du contrôle de version, compiler le code, exécuter des tests unitaires, etc.
+description: A Jenkins job is a sequential set of tasks that a user defines. For example, a job can fetch source code from version control, compile the code, run unit tests, and more.
 bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
 ---
 
-Notez que dans Jenkins, le terme **job** est synonyme de **project**. De plus, le nombre de types de travaux dépend des plugins que vous avez installés. Par exemple, un projet/job Maven n'est disponible que si vous avez installé les plugins Maven.
+Note that in Jenkins, the term **job** is synonymous with **project**. In addition, the number of job types depends on the plugins that you have installed. For example, a Maven project/job is only available if you installed the Maven plugins.
 
-### Types de job Jenkins
+### Jenkins job types
 
-**Projet Freestyle:**
+**Freestyle project:**
 
-Ce type de tâche est le type de projet par défaut et est le plus flexible à configurer.
+This task type is the default project type and is the most flexible to configure.
 
 **Pipeline:**
 
-Un pipeline est un moyen de définir l'ensemble de votre processus de génération à l'aide de code sous la forme d'un fichier Jenkins.
+A pipeline is a way of defining your entire build process using code in the form of a Jenkinsfile.
 
-### Pipeline job
+### job pipeline
 
 ```jsx
 pipeline {
@@ -37,8 +37,10 @@ pipeline {
 
 ### Multi-Branch Pipeline
 
-Un pipeline multi-branches est une extension d'un Job Pipeline. Cependant, il a un moyen de créer automatiquement des pipelines Jenkins basés sur des branches de contrôle de code source. Jenkins peut alors découvrir automatiquement de nouvelles branches dans le contrôle de source, et il peut également créer automatiquement un pipeline pour cette branche.
+A multi-branch pipeline is an extension of a Pipeline Job. However, it has a way of automatically creating Jenkins pipelines based on source control branches. Jenkins can then automatically discover new branches in the source control, and it can also automatically create a pipeline for that branch.
 
-### Comment enchaîner les jobs
+### How to chain jobs
+
+We will see this practically
 
 ![test-img-public](/images/7.png)

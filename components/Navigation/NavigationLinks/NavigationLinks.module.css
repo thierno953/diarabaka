@@ -1,5 +1,5 @@
 .navLinks {
-    color: #787878;
+    color: #FFFFFF;
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -15,13 +15,13 @@
     width: 100%;
     padding: 20px 0;
     text-align: center;
-    color: #787878;
+    color: #FFFFFF;
     text-decoration: none;
     cursor: pointer;
 }
 
 .navLinks li a:hover {
-    color: #000000;
+    color: #9fe5fa;
 }
 
 @media all and (min-width: 696px) {

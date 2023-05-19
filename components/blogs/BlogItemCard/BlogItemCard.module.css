@@ -1,10 +1,15 @@
 .blogPostContainer {
   display: grid;
   flex-direction: column;
+  color: #f3ebeb;
 }
 .blogPostContainer svg {
   margin-left: 8;
   transition: all ease 500ms;
+}
+
+.blogPostContainer h5 {
+  color: #f3ebeb;
 }
 
 .blogPostContainer svg:hover {
@@ -21,11 +26,9 @@
 
 .blogDate {
   font-size: 14px;
-  color: #787878;
 }
 .blogPostDescription {
   font-size: 15px;
-  color: #787878;
 }
 
 .blogPostTitle {
@@ -33,4 +36,5 @@
   align-items: center;
   cursor: pointer;
   text-decoration: none;
+  color: #f3ebeb;
 }

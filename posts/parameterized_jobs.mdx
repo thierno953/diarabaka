@@ -1,0 +1,44 @@
+---
+title: Parameterized Jobs
+author: Thierno Barry
+date: 2023-05-18
+tags: [jenkins]
+description: A build parameter allows us to pass data into our Jenkisn jobs. 
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+Using build parameters, we can pass any data we want: git branch name, secret credentials, hostnames and ports, and so on.
+
+Any Jenkins job or pipeline can be parameterized. All we need to do is check the box on the General settings tab, **this project is parameterized**:
+
+![test-img-public](/images/8.png)
+
+### Parameterized Jobs Continued...
+
+**Type:** The data type for the parameter (string, boolean, etc.)
+
+**Name:** The name identifying the parameter.
+
+**Default value:** An optional value that will be used when a user doesn't specify one.
+
+**Description:** Optional text that describes how the parameter is used.
+
+**A single Jenkins job or pipeline:** Can have multiple parameters. The only restriction is that the parameter name must be unique.
+
+### Types of Parameters:
+
+Jenkins supports several parameter types. Bellow is a list of the most common ones, but keep in mind that different plugins may add new parameter types:
+
+**String:** Any combination of characters and numbers.
+
+**Choice:** A pre-defined set of strings from which a user can pick a value.
+
+**Credentials:** A pre-defined Jenkins credential.
+
+**File:** The full path to a file on the filesystem.
+
+**Multi-line String:** Same as String, but allows newline characters.
+
+**Password:** Similar to the Credentials type, but allows us to pass a plain text parameter specific to the job or pipeline.
+
+**Run:** An absolute URL to a single run of another job.

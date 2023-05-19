@@ -13,7 +13,7 @@ import Pagination from "@/components/Pagination/Pagination";
 import PageHeading from "@/components/PageHeading/PageHeading";
 
 export default function BlogPage({ posts }) {
-   // pagination
+  // pagination
   const postPerPage = 20;
   const [currentPage, setCurrentPage] = useState(null);
   const router = useRouter();
@@ -30,7 +30,7 @@ export default function BlogPage({ posts }) {
 
   const allTagsArr = [...allTagsSet].sort((a, b) => a.localeCompare(b));
   allTagsArr.unshift("all");
- 
+
   useEffect(() => {
     let tempPosts = [...posts];
     if (selectedTag && selectedTag !== "all") {
@@ -44,7 +44,7 @@ export default function BlogPage({ posts }) {
     const start = (page - 1) * postPerPage;
     const end =
       start + postPerPage > posts.length - 1
-        ? posts.length 
+        ? posts.length
         : start + postPerPage;
     const paginatedPosts = tempPosts.slice(start, end);
     setFilteredPosts(paginatedPosts);
@@ -71,12 +71,13 @@ export default function BlogPage({ posts }) {
           title="Le contenu du blog"
           description={
             <>
-              J&#39;ai commencé à écrire des articles sur mon blog et à apprendre
-              dans le cloud.
+              J&#39;ai commencé à écrire des articles sur mon blog et à
+              apprendre dans le cloud.
               <br />
               Mon objectif est de partager les concepts que j&#39;apprends, les
-              projets que je construis et les tâches que j&#39;effectue concernant
-              DevOps et System Admin. <br /><br /> Bienvenue sur mon blog!
+              projets que je construis et les tâches que j&#39;effectue
+              concernant DevOps et System Admin. <br />
+              <br /> Bienvenue sur mon blog!
             </>
           }
         />
@@ -94,8 +95,7 @@ export default function BlogPage({ posts }) {
       </main>
     </>
   );
-};
-
+}
 
 export async function getStaticProps() {
   const posts = postFileNames.map((slug) => {

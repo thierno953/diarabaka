@@ -7,7 +7,7 @@ description: CI/CD is a method for frequently delivering applications to custome
 bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
 ---
 
-CI/CD is a solution to the problems that integrating new code can cause for development and operations teams  (**AKA "integration hell"**).
+CI/CD is a solution to the problems that integrating new code can cause for development and operations teams (**AKA "integration hell"**).
 
 **exemple:**
 
@@ -19,66 +19,62 @@ CI/CD is a solution to the problems that integrating new code can cause for deve
 | Merge                   | Repository            | Production              |
 ```
 
-### CI continued...
-
 ### Continuous Integration (CI)
 
-Les développeurs pratiquant l'intégration continue fusionnent leurs modifications vers la branche principale aussi souvent que possible. Les modifications du développeur sont validées en créant un build et en exécutant des tests automatisés sur le build. Ce faisant, vous évitez les problèmes d'intégration qui peuvent survenir lorsque vous attendez le jour de la publication pour fusionner les modifications dans la branche de publication.
+Developers practicing continuous integration merge their changes to the main branch as often as possible. Developer changes are validated by creating a build and running automated tests against the build. By doing so, you avoid integration issues that can arise when you wait until release day to merge changes into the release branch.
 
-L'intégration continue met l'accent sur l'automatisation des tests pour vérifier que l'application n'est pas cassée chaque fois que de nouveaux commits sont intégrés dans la branche principale.
+Continuous integration emphasizes automating testing to verify that the application isn't broken each time new commits are pushed into the master branch.
 
-#### Ce dont vous avez besoin 👍
+#### What you need 👍
 
-1 - Votre équipe devra écrire des tests automatisés pour chaque nouvelle fonctionnalité, amélioration ou correction de bugs.
+> 1 - Your team will need to write automated tests for every new feature, improvement, or bug fix.
+>
+> 2 - You need a continuous integration server that can monitor the main repository and run the tests automatically for each new commit pushed.
+>
+> 3 - Developers should merge their changes as often as possible, at least once a day.
 
-2 - Vous avez besoin d'un serveur d'intégration continue capable de surveiller le référentiel principal et d'exécuter les tests automatiquement pour chaque nouveau commit poussé.
+#### what you earn 👍
 
-3 -  Les développeurs doivent fusionner leurs changements aussi souvent que possible, au moins une fois par jour.
-
-#### Ce que vous gagnez
-
-1 - Moins de bogues sont envoyés en production car les régressions sont capturées tôt par les tests automatisés.
-
-2 - La construction de la version est facile car tous les problèmes d'intégration ont été résolus tôt.
-
-3 - Moins de changement de contexte car les développeurs sont alertés dès qu'ils cassent la construction et peuvent travailler à la réparer avant de passer à une autre tâche.
-
-4 -  Les coûts de test sont considérablement réduits, votre serveur CI peut exécuter des centaines de tests en quelques secondes.
-
-5 - Votre équipe QA passe moins de temps à tester et peut se concentrer sur des améliorations significatives de la culture qualité.
+> 1 - Fewer bugs are sent to production because regressions are caught early by automated testing.
+>
+> 2 - Building the release is easy as all integration issues have been resolved early.
+>
+> 3 - Less context switching as developers are alerted as soon as they break the build and can work on fixing it before moving on to another task.
+>
+> 4 - Testing costs are dramatically reduced, your CI server can run hundreds of tests in seconds.
+>
+> 5 - Your team spends less time testing and can focus on meaningful quality culture improvements.
 
 ### Continuous deployment (CD)
 
-Le déploiement continu va plus loin que la livraison continue. Avec cette pratique, chaque modification qui franchit toutes les étapes de votre pipeline de production est publiée pour vos clients. Il n'y a aucune intervention humaine, et seul un test raté empêchera qu'un nouveau changement soit déployé en production.
+Continuous deployment goes beyond continuous delivery. With this practice, every change that passes through all stages of your production pipeline is released to your customers. There is no human intervention, and only a failed test will prevent a new change from being deployed to production.
 
-Le déploiement continu est un excellent moyen d'accélérer la boucle de rétroaction avec vos clients et de soulager l'équipe car il n'y a plus de "jour de publication". Les développeurs peuvent se concentrer sur la création de logiciels et ils voient leur travail être mis en ligne quelques minutes après avoir fini de travailler dessus.
+Continuous deployment is a great way to speed up the feedback loop with your customers and relieve the team because there's no more "release day". Developers can focus on building software and see their work go live within minutes of finishing working on it.
 
-### CD continuous delivery...
+### Continuous delivery (CD)
 
-Livraison continue
+Continuous delivery is an extension of continuous integration since it automatically deploys all code changes to a test and/or production environment after the build stage.
 
-La livraison continue est une extension de l'intégration continue puisqu'elle déploie automatiquement toutes les modifications de code dans un environnement de test et/ou de production après l'étape de construction.
+This means that in addition to automated testing, you have an automated release process and you can deploy your application at any time with the click of a button.
 
-Cela signifie qu'en plus des tests automatisés, vous disposez d'un processus de publication automatisé et que vous pouvez déployer votre application à tout moment en cliquant sur un bouton.
+#### What you need 👍
 
-#### Ce dont vous avez besoin 👍
+> 1 - You need a solid foundation in continuous integration and your test should sufficiently cover your codebase.
+>
+> 2 - Deployments must be automated. The trigger is still manual, but once a deployment is initiated, no human intervention should be required.
+>
+> 3 - Your team will most likely need to adopt feature flags so that incomplete features don't affect customers in production.
 
-1 - Vous avez besoin d'une base solide en intégration continue et votre test doit couvrir suffisamment votre base de code.
+#### what you earn 👍
 
-2 - Les déploiements doivent être automatisés. Le déclencheur est toujours manuel, mais une fois qu'un déploiement est lancé, aucune intervention humaine ne devrait être nécessaire.
-
-3 - Votre équipe devra très probablement adopter des indicateurs de fonctionnalité afin que les fonctionnalités incomplètes n'affectent pas les clients en production.
-
-#### Ce que vous gagnez
-
-1 - La complexité du logiciel de déploiement a été supprimée. Votre équipe n'a plus besoin de passer des jours à préparer une version.
-
-2 - Vous pouvez publier plus souvent, accélérant ainsi la boucle de rétroaction avec vos clients.
-
-3 - Il y a beaucoup moins de pression sur les décisions pour les petits changements, ce qui encourage une itération plus rapide.
+> 1 - Deployment software complexity removed. Your team no longer needs to spend days preparing a release.
+>
+> 2 - You can post more often, speeding up the feedback loop with your customers.
+>
+> 3 - There is much less decision pressure for small changes, which encourages faster iteration.
 
 ### Plugins in Jenkins
 
-Les plugins sont le principal moyen d'améliorer les fonctionnalités d'un environnement Jenkins pour répondre aux besoins spécifiques de l'organisation ou de l'utilisateur. Il existe plus d'un millier de plugins différents qui peuvent être installés sur un contrôleur Jenkins et pour intégrer divers outils de construction, fournisseurs de cloud, outils d'analyse, et bien plus encore.
+Plugins are the primary way to enhance the functionality of a Jenkins environment to meet specific organizational or user needs. There are over a thousand different plugins that can be installed on a Jenkins controller and for integrating various build tools, cloud providers, analytics tools, and more.
 
 ![test-img-public](/images/6.png)

@@ -27,7 +27,7 @@
 .getInTouchButton {
   font-size: 14px;
   color: #ffffff;
-  background: #787878;
+  background: #223531;
   padding: 14px 20px;
   border-radius: 4px;
   text-decoration: none;
@@ -35,5 +35,5 @@
 }
 
 .getInTouchButton:hover {
-  background: #000000;
+  background: #384b47;
 }
