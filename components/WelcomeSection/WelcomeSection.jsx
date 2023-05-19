@@ -9,13 +9,17 @@ const WelcomeSection = () => {
   return (
     <div className={classes.welcomeContainer}>
       <h1 className={clsx(globalClasses.h1, classes.welcomeText)}>
-        Je suis Thierno M Barry
+        I am Thierno M Barry
         <br />
-        <span className={classes.span}>développeur full stack basé en Belgique.</span>
+        <span className={classes.span}>
+          full stack developer based in Belgium.
+        </span>
         <br />
-        Spécialisé dans les applications javascript.
+        Specialized in javascript applications.
         <br />
-        <span className={classes.span}>J&#39;apprends actuellement DevOps et System Admin.</span>
+        <span className={classes.span}>
+          I am currently learning DevOps and System Admin.
+        </span>
       </h1>
       <Image
         src={ThiernoImage}

@@ -68,16 +68,15 @@ export default function BlogPage({ posts }) {
       </Head>
       <main className={globalClasses.container}>
         <PageHeading
-          title="Le contenu du blog"
+          title="Blog"
           description={
             <>
-              J&#39;ai commencé à écrire des articles sur mon blog et à
-              apprendre dans le cloud.
+              I started writing blog posts and learning in the cloud.
               <br />
-              Mon objectif est de partager les concepts que j&#39;apprends, les
-              projets que je construis et les tâches que j&#39;effectue
-              concernant DevOps et System Admin. <br />
-              <br /> Bienvenue sur mon blog!
+              <br />
+              My goal is to share the concepts I learn, the projects I build,
+              and the tasks I perform regarding DevOps and System Admin. <br />
+              <br /> Welcome to my blog!
             </>
           }
         />

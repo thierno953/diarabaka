@@ -1,0 +1,224 @@
+---
+title: Pipeline Continued
+author: Thierno Barry
+date: 2023-05-19
+tags: [jenkins]
+description: Jenkins Pipeline is a suite of plugins that supports implementing and integrating continuous delivery pipelines into Jenkins.
+bannerUrl: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+---
+
+**stages:** This section wraps all of the individual stage definitions(directives) that define the main body and logic for the pipeline.
+
+**steps:** This section wraps a set of DSL steps within a stage definition. It services to separate the collection of steps from other items within a stage, such as environment definitions.
+
+**posts:** This section wraps around steps and conditions to be done or checked at the end of a pipeline run or at the end of a stage.
+
+Pipeline Example:
+
+```jsx
+pipeline {
+   agent any
+
+   stages {
+      stage('name1') {
+         steps {
+            ---
+         }
+         post {
+            ---
+         }
+      }
+      stage('name2') {
+         steps {
+            ---
+         }
+      }
+   }
+   post {
+      ---
+   }
+}
+```
+
+### Directives
+
+A directive can be thought of as a statement or block of code that does any of the following in a pipeline.
+
+**Definies values:** An example of this is the agent directive, which allows us to specify a node or container to run an entire pipeline or a stage in. If we wanted to run our pipeline on a node named worker, we could use agent ('worker').
+
+**Configures behavior:** An example of this is the triggers directive that lets us configure how often Jenkins checks for source updates or triggers our pipeline. If we wanted it to retrigger our pipeline at 7 a.m every weekday, we could use triggers **cron(0 7 0 0 1-5)**.
+
+**Specifies actions to be done:** An example of this is the stage directive, which is expected to have a steps section containing DSL steps to be executed.
+
+### Steps
+
+**Label:** Steps itself is a section title with in a stage of the pipeline. However, within the section, we can have any valid DSL statement, such as git, sh, echo, etc. You can think of a step here as corresponding to one of these statements.
+
+**Conditionals:** Supply a condition or criteria under which an action should occur. These are optional. There are two cases you may encounter/use.
+
+**When:** Strictly speaking, this is a directive. It resides within a stage definition and defines criteria for whether or not a stage should be executed.
+
+For example:
+
+```jsx
+stage ('build') {
+   when {
+      branch 'foo'
+   }
+   <steps>
+}
+```
+
+Conditionals blocks in the post section that define the criteria for doing post-processing. The criteria (conditions) here refer to the status of the build, such as success or failure.
+
+```jsx
+pipeline
+    agent
+    environment
+    tools
+    options
+    triggers
+    parameters
+    libraries
+    stages
+
+        stage
+            agent
+            environment
+            tools
+            steps
+                DSL statements
+            post
+
+        stage
+
+    post
+```
+
+The pipeline block is required in a jenkins Declarative Pipeline. It is the outermost section and signals that this is a Pipeline project. The syntax is simple pipeline {} with the rest of the code within the closure:
+
+```jsx
+pipeline {
+   // pipeline code
+}
+```
+
+**Agent any:** This syntax tells Jenkins that the pipeline or stage can run on any agent that is definied, without regard to what label it has.
+
+**Agent none:** When used at the top level, this indicates that we are not specifying and agent globally for the pipeline. The implication is that an agent will be specified, if needed, for individual stages.
+
+**Agent label:** This indicates that the pipeline or stage can run on any agent that has the label.
+
+### Enivironment
+
+Jenkins Enivironment Variable is a global variable exposed through the env variable and used anywhere in the Jenkins file. Any value stored in the env variable gets stored as a String type. Enivironment Variables can be set either at the pipeline top level, at the specific stage level, or inside the script block.
+
+```jsx
+environment {
+        TIMEZONE = "eastern"
+        TIMEZONE_DS = "${TIMEZONE}_dayligth_savings"
+}
+```
+
+### Tools
+
+Jenkins users are familiar with using the Global Tool Configuration screen to configuration versions, paths, and installers for tools. Once configured there, the tools directive allows use to specify which of these we want to have auto-installed and made available in the path on the agent we've chosen.
+
+```jsx
+tools {
+   gradle "gradle3.2"
+}
+```
+
+### Options
+
+The options directive allows configuring Pipeline-specific options from within the Pipeline itself. Pipeline provides a number of these options, such as buildDiscarder, but they may also be provided by plugins, such as timestamps.
+
+```jsx
+options {
+    buildDiscarder(logRotator(numToKeepStr: '3'))
+}
+
+options {
+    skipDefaultCheckout()
+}
+```
+
+### Triggers
+
+This directive allows you to specfify what kind of triggers should initiate builds in your pipeline. Note that these do not apply to Multibranch Pipeline or Github organization or Bitbucket team/project jobs that are market by Jenkinsfile and triggered otherwise-such as by a webhook that notifies Jenkins when a change is made.
+
+There are four different (SCM-neutral) triggers currently available: **cron, pollSCM, upstream, and githubPush**.
+
+### Cron
+
+```jsx
+// Start a pipeline execution at 10 minutes past the hour
+triggers { cron(10 * * * * ) }
+
+// Scan for SCM changes at 10-minute intervals
+triggers { pollSCM(*/10 * * * * ) }
+
+// Start a pipeline session at some point between 0 and 30 minutes after the hour
+// the hour
+triggers { cron(H(0,30) * * * * ) }
+
+// Start a pipeline execution at 8 a.m Monday through Friday
+triggers { cron(0 8 * * * 1-5 ) }
+```
+
+### Paramters
+
+The Paramters directive provides a list of parameters that a user should provide when triggering the Pipeline. The values for these user-specified parameters are made available to Pipeline steps via the params object, see the parameters, Declarativ Pipeline for its specific usage.
+
+Each parameter has a Name and value, depending on the parameter type. This information is exported as environment variables when the build starts, allowing subsequent ports of the build configuration to access those values. For example, this can be performed by using the **PARAMETER_NAME syntax (or %PARAMETER_NAME% on Windows)**
+
+### Available Paramters
+
+```jsx
+**string:** A parameter of a string type, for example: parameters { string(name: 'DEPLOY_EN', defaultValue: "staging", description: "")}
+
+**text:** A text parameter, which can contain multiple lines, for example: parameters { text(name: "DEPLOY_TEXT", defaultValue: "One\nTwo\nThree\n", description: "")}
+
+**booleanParam:** A boolean parameter, for example: parameter {booleanParam(name: "DEBUG_BUILD", defaultValue: true, description: "")}
+
+**choice:** A choice parameter, for example: parameters { choice(name: "CHOICES", choices: ["one", "two", "three"], description: "")}
+
+**password:** A password parameter, for example: parameters { password(name: "PASSWORD", defaultValue: "SECRET", description: "A secret password" )}
+```
+
+Paramters example:
+
+```jsx
+pipeline {
+
+    agent any
+
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+    }
+    stages {
+        stage('Example') {
+            steps {
+                echo "Hello ${params.PERSON}"
+
+                echo "Biography: ${params.BIOGRAPHY}"
+
+                echo "Toggle: ${params.TOGGLE}"
+
+                echo "Choice: ${params.CHOICE}"
+
+                echo "Password: ${params.PASSWORD}"
+            }
+        }
+    }
+}
+```

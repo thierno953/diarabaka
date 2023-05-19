@@ -23,7 +23,7 @@
 .scrollToTop {
   cursor: pointer;
   margin-top: 5rem;
-  background-color: #223531;
+  background: #384b47;
   border: none;
   font-size: 16px;
   color: #f9f9f9;
@@ -33,5 +33,5 @@
 }
 
 .scrollToTop:hover {
-  background: #384b47;
+  background: #223531;
 }
